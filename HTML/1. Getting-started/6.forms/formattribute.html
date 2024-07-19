@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Basic Form Input Attributes</title>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <hr />
+    <!--Form Input Attributes-->
+    <form>
+      <div>
+        <!-- !type attributes-->
+        <label>Enter Full Name</label>
+        <input type="text" />
+      </div>
+      <br />
+      <!-- !name attributes-->
+      <div>
+        <label>Enter Password</label>
+        <input type="password" name="2021" />
+      </div>
+      <br />
+      <!-- !value attributes-->
+      <div>
+        <label>Enter Birth year</label>
+        <input type="number" name="biryear" value="2021" />
+      </div>
+      <br />
+      <!-- !checkbox attributes-->
+      <div>
+        <label>Please checkbox</label>
+        <input type="checkbox" />
+      </div>
+      <br />
+      <!-- !required attributes-->
+      <div>
+        <label>Please enter your Age(Required*)</label>
+        <input type="number" required />
+      </div>
+      <br />
+      <!-- !placeholder attributes-->
+      <div>
+        <input type="number" required placeholder="Enter your birth date" />
+      </div>
+      <br />
+      <!-- ! min and max attributes-->
+      <div>
+        <label>Please enter range of number between 10 to 100</label>
+        <input type="number" min="10" max="100" />
+      </div>
+      <br />
+      <!-- !step attributes-->
+      <div>
+        <label>Enter step (table of 2</label>
+        <input type="number" step="2" />
+      </div>
+      <br />
+      <!-- !color type-->
+      <div>
+        <label>Enter color</label>
+        <input type="color" />
+      </div>
+      <br />
+      <!-- !date type-->
+      <div>
+        <label>Enter date</label>
+        <input type="date" />
+      </div>
+      <br />
+      <!-- !file type-->
+      <div>
+        <label>Enter File</label>
+        <input type="file" />
+      </div>
+      <br />
+      <input type="button" value="submit" />
+    </form>
+  </body>
+</html>

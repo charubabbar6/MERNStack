@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Nested Table</title>
+  </head>
+  <body>
+    <!--Nested  html table-->
+    <h1>Nested Table</h1>
+    <hr />
+
+    <table style="width: 100%; border: 1px solid #ccc; margin: 10px">
+      <caption style="text-align: left; font-weight: bolder; margin: 10px">
+        Employee Information
+      </caption>
+
+      <!--Row1 table head-->
+      <tr>
+        <th
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+          "
+        >
+          Name
+        </th>
+        <th
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+          "
+        >
+          Age
+        </th>
+        <th
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+          "
+        >
+          Gender
+        </th>
+        <th
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+          "
+        >
+          Department
+        </th>
+      </tr>
+      <!--? table data 1-->
+      <tr>
+        <td
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+          "
+        >
+          Charu
+        </td>
+        <td
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+          "
+        >
+          39
+        </td>
+        <td
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+          "
+        >
+          Female
+        </td>
+        <!--*Nested table-->
+        <td>
+          <table style="width: 100%; border: none; margin: 0">
+            <!--*Nested table head-->
+            <tr>
+              <th style="background-color: #f0f0f0; padding: 5px">
+                Department Name
+              </th>
+              <th style="background-color: #f0f0f0; padding: 5px">Manager</th>
+              <th style="background-color: #f0f0f0; padding: 5px">Sales`</th>
+            </tr>
+            <!--?Nested tabledata-->
+            <tr>
+              <td>Sales</td>
+              <td>Arjun</td>
+              <td>$200</td>
+            </tr>
+            <tr>
+              <td>Manager</td>
+              <td>Sushant</td>
+              <td>$2000</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <!--table data 2.-->
+      <tr>
+        <td
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+          "
+        >
+          Ben
+        </td>
+        <td
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+          "
+        >
+          34
+        </td>
+        <td
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+          "
+        >
+          Male
+        </td>
+        <!--*Nested table-->
+        <td>
+          <table style="width: 100%; border: none; margin: 0">
+            <!--*Nested table head-->
+            <tr>
+              <th style="background-color: #f0f0f0; padding: 5px">
+                Department Name
+              </th>
+              <th style="background-color: #f0f0f0; padding: 5px">Manager</th>
+              <th style="background-color: #f0f0f0; padding: 5px">Sales</th>
+            </tr>
+            <!--?Nested tabledata-->
+            <tr>
+              <td>IT</td>
+              <td>Arjun</td>
+              <td>$2700</td>
+            </tr>
+            <tr>
+              <td>Finanace</td>
+              <td>Sushant</td>
+              <td>$1000</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

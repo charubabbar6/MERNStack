@@ -1,0 +1,78 @@
+<!--"semantic" refers to the use of HTML elements that convey the meaning and structure of the content, rather than just its appearance. Semantic HTML elements provide additional information about the content they contain, which helps both browsers and developers understand the content more accurately.
+
+Importance of Semantic HTML
+Accessibility:
+
+Semantic elements make web content more accessible to people using screen readers and other assistive technologies. For example, using <header>, <nav>, and <footer> helps screen readers navigate a page more effectively.
+SEO (Search Engine Optimization):
+
+Search engines can better understand and index the content of a webpage when semantic elements are used. This can improve the page's search engine ranking.
+Maintainability:
+
+Using semantic HTML makes the code more readable and maintainable. It is easier for developers to understand the structure and purpose of the content.
+Standards Compliance:
+
+Semantic HTML helps ensure that the webpage adheres to web standards set by organizations like the W3C (World Wide Web Consortium).-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <!--?<article>:Represents a self-contained piece of content that could be independently distributed or reused.-->
+    <article>
+      <h2>Article Title</h2>
+      <p>This is an article about semantic HTML.</p>
+    </article>
+    <!--?<section>:Represents a thematic grouping of content, typically with a heading.-->
+    <section>
+      <h2>Section Heading</h2>
+      <p>This is a section of the document.</p>
+    </section>
+    <!--?<header>:Represents introductory content or a group of navigational links.-->
+    <header>
+      <h1>Page Title</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!--?<footer>:Represents the footer of a document or section, typically containing metadata or navigational links.-->
+    <footer>
+      <p>&copy; 2024 Your Company</p>
+      <nav>
+        <ul>
+          <li><a href="#privacy">Privacy Policy</a></li>
+          <li><a href="#terms">Terms of Service</a></li>
+        </ul>
+      </nav>
+    </footer>
+    <!--?<nav>:Represents a section of the document intended for navigation.-->
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <!--?<aside>:Represents content that is tangentially related to the content around it, such as a sidebar.-->
+    <aside>
+      <h2>Related Articles</h2>
+      <ul>
+        <li><a href="#article1">Article 1</a></li>
+        <li><a href="#article2">Article 2</a></li>
+      </ul>
+    </aside>
+    <!--?<main>:Represents the main content of the document, which is unique to the document.-->
+    <main>
+      <h1>Main Content</h1>
+      <p>This is the main content of the page.</p>
+    </main>
+    <!--?<figure> and <figcaption>:<figure> represents self-contained content, often with a caption, and <figcaption> provides the caption for the <figure>.-->
+    <figure>
+      <img src="image.jpg" alt="A description of the image" />
+      <figcaption>This is the caption for the image.</figcaption>
+    </figure>
+  </body>
+</html>

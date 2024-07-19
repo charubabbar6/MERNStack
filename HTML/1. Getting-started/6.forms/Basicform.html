@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>User Registration Form</title>
+  </head>
+  <body>
+    <form>
+      <!-- Personal Information Section -->
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <!-- Name Field -->
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required /><br /><br />
+
+        <!-- Email Field -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required /><br /><br />
+
+        <!-- Date of Birth Field -->
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required /><br /><br />
+      </fieldset>
+      <!-- Country Selection -->
+      <fieldset>
+        <legend>Country</legend>
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+          <option value="ireland">Ireland</option>
+          <option value="usa">USA</option>
+          <option value="canada">Canada</option>
+          <option value="uk">UK</option>
+          <option value="germany">Germany</option>
+          <option value="france">France</option>
+          <option value="australia">Australia</option>
+          <option value="india">India</option>
+          <option value="japan">Japan</option>
+          <option value="brazil">Brazil</option></select
+        ><br /><br />
+      </fieldset>
+
+      <!-- Interests Section -->
+      <!-- Add checkboxes for interests here -->
+      <fieldset>
+        <legend>Interests</legend>
+        <label
+          ><input type="checkbox" name="interests" value="sports" />
+          Sports</label
+        ><br />
+        <label
+          ><input type="checkbox" name="interests" value="music" /> Music</label
+        ><br />
+        <label
+          ><input type="checkbox" name="interests" value="reading" />
+          Reading</label
+        ><br />
+        <label
+          ><input type="checkbox" name="interests" value="traveling" />
+          Traveling</label
+        ><br />
+        <label
+          ><input type="checkbox" name="interests" value="cooking" />
+          Cooking</label
+        ><br /><br />
+      </fieldset>
+
+      <!-- Password Fields -->
+      <fieldset>
+        <legend>Password</legend>
+        <label for="password">Password:</label>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          required
+        /><br /><br />
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input
+          type="password"
+          id="confirmPassword"
+          name="confirmPassword"
+          required
+        /><br /><br />
+      </fieldset>
+      <!-- Terms and Conditions -->
+
+      <!-- Agreement Checkbox -->
+      <fieldset>
+        <legend>Terms and Conditions</legend>
+        <details>
+          <summary>Read Terms and Conditions</summary>
+          <p>Here are the terms and conditions...</p>
+        </details>
+        <label
+          ><input type="checkbox" id="agree" name="agree" required /> I agree to
+          the terms and conditions</label
+        ><br /><br />
+      </fieldset>
+
+      <!-- Submit Button -->
+      <input type="submit" value="Submit" disabled />
+    </form>
+  </body>
+</html>

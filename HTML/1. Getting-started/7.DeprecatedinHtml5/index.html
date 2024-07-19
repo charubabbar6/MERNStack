@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Deprecated elements</title>
+  </head>
+  <body>
+    <!--!Used for specifying font face, size, and color.-->
+    <!-- Deprecated -->
+    <font face="Arial" size="4" color="blue">This is some text!</font>
+
+    <!-- Recommended -->
+    <span style="font-family: Arial; font-size: 16px; color: blue"
+      >This is some text!</span
+    >
+    <!--!Used to center-align text or content.-->
+    <!-- Deprecated -->
+    <center>This is centered text.</center>
+
+    <!-- Recommended -->
+    <div style="text-align: center">This is centered text.</div>
+    <!--!Used to make text larger or smaller than the surrounding text.-->
+    <!-- Deprecated -->
+    <big>This text is big!</big>
+    <small>This text is small!</small>
+
+    <!-- Recommended -->
+    <span style="font-size: larger">This text is big!</span>
+    <span style="font-size: smaller">This text is small!</span>
+    <!--!Used to render strikethrough text.-->
+    <!-- Deprecated -->
+    <strike>This text is struck through.</strike>
+    <s>This text is struck through.</s>
+
+    <!-- Recommended -->
+    <del>This text is struck through.</del>
+    <span style="text-decoration: line-through"
+      >This text is struck through.</span
+      <!--!Used to underline text.-->
+    ><!-- Deprecated -->
+    <u>This text is underlined.</u>
+
+    <!-- Recommended -->
+    <span style="text-decoration: underline">This text is underlined.</span>
+    <!--!Used to embed Java applets.-->
+    <!-- Deprecated -->
+    <applet code="MyApplet.class" width="300" height="300"></applet>
+
+    <!-- Recommended -->
+    <object type="application/x-java-applet" width="300" height="300">
+      <param name="code" value="MyApplet.class" />
+    </object>
+    <!--!Used to set the default font size, color, and face for an entire document.-->
+  <!-- Deprecated -->
+<basefont size="4" color="red" face="Arial">
+
+    <!-- Recommended -->
+    <style>
+        body {
+            font-size: 16px;
+            color: red;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+    <!--!Used to create a directory list.-->
+    <!-- Deprecated -->
+<dir>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</dir>
+
+<!-- Recommended -->
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+<!--!Used to create a menu list.-->
+<!-- Deprecated -->
+<menu>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</menu>
+
+<!-- Recommended -->
+<ul>
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+<!--!Used to provide a single-line text input for queries.<!-- Deprecated -->
+<isindex prompt="Enter search text:">
+
+    <!-- Recommended -->
+    <form action="/search">
+        <label for="search">Enter search text:</label>
+        <input type="text" id="search" name="search">
+    </form>
+</body>
+</html>

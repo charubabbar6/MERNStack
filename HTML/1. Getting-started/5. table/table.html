@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Table</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.min.css"
+    />
+  </head>
+  <body>
+    <!--table-->
+    <h1>Customer Table</h1>
+    <hr />
+    <table id="customerTable" style="width: 100%; border: 1px solid #ccc">
+      <!--Row1-->
+      <tr>
+        <th
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+          "
+        >
+          Customer Name
+        </th>
+        <th
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+          "
+        >
+          Customer Age
+        </th>
+        <th
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+          "
+        >
+          Customer Gender
+        </th>
+        <th
+          style="
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+          "
+        >
+          Customer Email Id
+        </th>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ccc">Charu</td>
+        <td style="padding: 10px; border: 1px solid #ccc">39</td>
+        <td style="padding: 10px; border: 1px solid #ccc">Female</td>
+        <td style="padding: 10px; border: 1px solid #ccc">
+          er.charu.babbar@gmail.com
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ccc">Sushant</td>
+        <td style="padding: 10px; border: 1px solid #ccc">39</td>
+        <td style="padding: 10px; border: 1px solid #ccc">Male</td>
+        <td style="padding: 10px; border: 1px solid #ccc">
+          er.sushant.chanana@gmail.com
+        </td>
+      </tr>
+      <tr>
+        <td style="padding: 10px; border: 1px solid #ccc">Arjun</td>
+        <td style="padding: 10px; border: 1px solid #ccc">3</td>
+        <td style="padding: 10px; border: 1px solid #ccc">Male</td>
+        <td style="padding: 10px; border: 1px solid #ccc">arjun21@gmail.com</td>
+      </tr>
+    </table>
+    <!-- Include Jasmine library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/jasmine-html.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/3.6.0/boot.min.js"></script>
+
+    <!-- Include the Jasmine test script -->
+    <script src="./spec.js"></script>
+  </body>
+</html>

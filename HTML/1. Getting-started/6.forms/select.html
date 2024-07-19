@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Multiple and Single Select</title>
+  </head>
+  <body>
+    <h1>Multiple and Single Select</h1>
+    <hr />
+    <form>
+      <!--Single Select-->
+      <label>Select your best programming language and libraries</label>
+      <select name="languages">
+        <option value="java">Java</option>
+        <option value="js">JavaScript</option>
+        <option value="python">Phython</option>
+        <option value="Reactjs">React</option>
+        <option selected value="Express js">Express js</option>
+      </select>
+      <br />
+      <!--Multiple Select-->
+      <label
+        >Select your best programming language and libraries(more than
+        one)</label
+      >
+      <select name="languages" multiple>
+        <option value="java">Java</option>
+        <option selected value="js">JavaScript</option>
+        <option value="python">Phython</option>
+        <option selected value="Reactjs">React</option>
+        <option value="Express js">Express js</option>
+      </select>
+    </form>
+  </body>
+</html>
