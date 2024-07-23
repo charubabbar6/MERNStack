@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charu Blog</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Charu's Blog</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+        <section class="post">
+            <h2>Core Java Interview Questions</h2>
+            <p>
+              Created on <time datetime="2024-07-22">July 22, 2024</time> by Charu
+            </p>
+            <h3>Object:</h3>
+            <div class="expand-collapse">
+                <button class="toggle-button">
+                    Why is wrapper class required?
+                  </button>
+                  <div class="content">
+                    <p>Wrapper classes in Java are required for several reasons, primarily revolving around the need to treat primitive types as objects. Here are the key reasons:</p>
+
+                    <h2>Object-Oriented Nature</h2>
+                    <p>Java is an object-oriented programming language that treats everything as an object, except for the eight primitive types (int, char, byte, boolean, short, long, float, double). Wrapper classes allow these primitive types to be treated as objects, which is essential for certain features and operations.</p>
+                
+                    <h2>Collections Framework</h2>
+                    <p>The Java Collections Framework (such as ArrayList, HashSet, HashMap, etc.) only works with objects. Primitive types cannot be directly added to collections. Wrapper classes enable primitives to be added to collections by wrapping them into objects.</p>
+                    <pre><code>ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+                list.add(5);  // Autoboxing: primitive int 5 is converted to Integer object
+                    </code></pre>
+                
+                    <h2>Methods and API Requirements</h2>
+                    <p>Many Java methods and APIs require objects as parameters and return types. Wrapper classes allow primitives to be used with these methods and APIs.</p>
+                    <pre><code>Integer a = Integer.valueOf(5);  // Converting primitive int to Integer object
+                int b = a.intValue();            // Converting Integer object back to primitive int
+                    </code></pre>
+                
+                    <h2>Autoboxing and Unboxing</h2>
+                    <p>Java provides autoboxing (automatic conversion of primitives to their corresponding wrapper objects) and unboxing (automatic conversion of wrapper objects back to primitives). This feature simplifies code by allowing easy conversions between primitives and objects.</p>
+                    <pre><code>Integer a = 5;     // Autoboxing: primitive int 5 is converted to Integer object
+                int b = a;         // Unboxing: Integer object is converted back to primitive int
+                    </code></pre>
+                
+                    <h2>Type Safety with Generics</h2>
+                    <p>Generics in Java work only with objects. Wrapper classes ensure type safety by allowing primitives to be used with generic classes.</p>
+                    <pre><code>List&lt;Integer&gt; list = new ArrayList&lt;&gt;();
+                list.add(10);  // Allowed because of autoboxing
+                // List&lt;int&gt; list = new ArrayList&lt;&gt;();  // Not allowed
+                    </code></pre>
+                
+                    <h2>Utility Methods</h2>
+                    <p>Wrapper classes provide utility methods for converting between strings and numeric values, parsing strings, and performing other operations.</p>
+                    <pre><code>int i = Integer.parseInt("123");  // Converts string to int
+                String s = Integer.toString(123); // Converts int to string
+                    </code></pre>
+                
+                    <h2>Null Values</h2>
+                    <p>Wrapper classes can be used to represent null values in cases where a primitive type is not applicable. This is useful in databases and data structures where nullability is required.</p>
+                    <pre><code>Integer a = null;  // Allowed with wrapper class
+                // int b = null;   // Not allowed with primitive type
+                    </code></pre>
+                
+                    <p>Overall, wrapper classes bridge the gap between Java's primitive types and its object-oriented features, allowing for more flexible and powerful programming techniques.</p>
+                  </div>
+            </div>
+            <div class="expand-collapse">
+                <button class="toggle-button">Methods of Object class?</button>
+          <div class="content">
+            <p>The <code>Object</code> class is the root of the class hierarchy in Java. Every class has <code>Object</code> as a superclass. Here are the methods provided by the <code>Object</code> class:</p>
+
+            <h2>1. <code>clone()</code></h2>
+            <p>Creates and returns a copy of this object. The precise meaning of "copy" may depend on the class of the object.</p>
+            <pre><code>protected Object clone() throws CloneNotSupportedException;</code></pre>
+        
+            <h2>2. <code>equals(Object obj)</code></h2>
+            <p>Indicates whether some other object is "equal to" this one.</p>
+            <pre><code>public boolean equals(Object obj);</code></pre>
+        
+            <h2>3. <code>finalize()</code></h2>
+            <p>Called by the garbage collector on an object when garbage collection determines that there are no more references to the object.</p>
+            <pre><code>protected void finalize() throws Throwable;</code></pre>
+        
+            <h2>4. <code>getClass()</code></h2>
+            <p>Returns the runtime class of this <code>Object</code>.</p>
+            <pre><code>public final Class<?> getClass();</code></pre>
+        
+            <h2>5. <code>hashCode()</code></h2>
+            <p>Returns a hash code value for the object.</p>
+            <pre><code>public int hashCode();</code></pre>
+        
+            <h2>6. <code>notify()</code></h2>
+            <p>Wakes up a single thread that is waiting on this object's monitor.</p>
+            <pre><code>public final void notify();</code></pre>
+        
+            <h2>7. <code>notifyAll()</code></h2>
+            <p>Wakes up all threads that are waiting on this object's monitor.</p>
+            <pre><code>public final void notifyAll();</code></pre>
+        
+            <h2>8. <code>toString()</code></h2>
+            <p>Returns a string representation of the object.</p>
+            <pre><code>public String toString();</code></pre>
+        
+            <h2>9. <code>wait()</code></h2>
+            <p>Causes the current thread to wait until another thread invokes the <code>notify()</code> method or the <code>notifyAll()</code> method for this object.</p>
+            <pre><code>public final void wait() throws InterruptedException;
+        public final void wait(long timeout) throws InterruptedException;
+        public final void wait(long timeout, int nanos) throws InterruptedException;</code></pre>
+            </div>
+            </div>
+            <div class="expand-collapse">
+                <button class="toggle-button">Does java gives importance to primitive data types?</button>
+          <div class="content">
+            <p>Java does give importance to primitive data types for several reasons:</p>
+
+            <h2>1. Performance</h2>
+            <p>Primitive data types are more efficient in terms of performance compared to their wrapper class counterparts. They are stored directly in memory, which makes access faster and requires less memory. This is especially critical in performance-sensitive applications.</p>
+        
+            <h2>2. Memory Efficiency</h2>
+            <p>Primitive data types use less memory compared to objects. For instance, an <code>int</code> uses 4 bytes, while an <code>Integer</code> object uses significantly more due to the overhead of object metadata.</p>
+        
+            <h2>3. Default Values</h2>
+            <p>Primitive data types have default values, which are useful in various programming scenarios. For example, numeric primitives default to <code>0</code>, <code>char</code> defaults to <code>'\u0000'</code>, and <code>boolean</code> defaults to <code>false</code>.</p>
+        
+            <h2>4. Simplicity</h2>
+            <p>Using primitive data types can simplify code. They do not require additional handling like object creation and garbage collection, which makes the code more straightforward and easier to read.</p>
+        
+            <h2>5. Autoboxing and Unboxing</h2>
+            <p>Java provides autoboxing (automatic conversion of primitives to their corresponding wrapper objects) and unboxing (automatic conversion of wrapper objects to primitives), which allows for seamless integration between primitives and objects. This feature simplifies coding and makes it easier to switch between primitive types and their wrapper classes.</p>
+            <pre><code>int primitiveInt = 5;
+        Integer wrapperInt = primitiveInt;  // Autoboxing
+        int anotherPrimitiveInt = wrapperInt;  // Unboxing
+            </code></pre>
+        
+            <h2>6. Primitive Type Literals</h2>
+            <p>Java allows the use of literals for primitive data types, which makes code concise and easy to read.</p>
+            <pre><code>int num = 10;
+        double price = 99.99;
+        char letter = 'A';
+            </code></pre>
+        
+            <h2>7. Efficiency in Loops and Computation</h2>
+            <p>Primitive types are preferred in loops and computationally intensive operations due to their speed and low overhead.</p>
+            <pre><code>for (int i = 0; i &lt; 1000; i++) {
+            // Perform operations
+        }
+            </code></pre>
+        
+            <h2>8. Interoperability with Low-Level Code</h2>
+            <p>Primitive data types are essential when interfacing with lower-level code, such as when using Java Native Interface (JNI) to interact with C/C++ code.</p>
+        
+            <h2>9. Type Safety and Clarity</h2>
+            <p>Using primitive data types can enhance type safety and make the intentions of the code clearer. For example, using <code>boolean</code> for true/false values is more expressive and less error-prone compared to using <code>Boolean</code>.</p>
+        
+            <p>Overall, while Java is a strongly object-oriented language, it acknowledges the importance of primitive data types by providing a balance between the efficiency of primitives and the flexibility of objects. This balance is critical for writing efficient, clear, and maintainable code.</p>
+            </div>
+            </div>
+            <div class="expand-collapse">
+                <button class="toggle-button">Is Java pass by value or pass by reference?</button>
+          <div class="content">
+            <p>Java is strictly "pass-by-value." However, the way Java handles this can sometimes be confusing, especially when dealing with objects. Let's clarify this with some details:</p>
+
+            <h2>Understanding Pass-by-Value in Java</h2>
+        
+            <h3>1. Primitive Data Types</h3>
+            <p>When a primitive data type (such as <code>int</code>, <code>double</code>, <code>char</code>, etc.) is passed to a method, the actual value is passed. Changes made to the parameter inside the method do not affect the original value.</p>
+            <pre><code>public class Example {
+            public static void main(String[] args) {
+                int x = 10;
+                modifyPrimitive(x);
+                System.out.println(x); // Output: 10
+            }
+        
+            public static void modifyPrimitive(int num) {
+                num = 20;
+            }
+        }</code></pre>
+        
+            <h3>2. Objects (References to Objects)</h3>
+            <p>When an object is passed to a method, the reference to the object is passed by value. The reference itself is a copy, but both the original and the copied reference point to the same object in the heap. Changes made to the object's fields via the copied reference inside the method affect the original object.</p>
+            <pre><code>public class Example {
+            public static void main(String[] args) {
+                MyObject obj = new MyObject();
+                obj.value = 10;
+                modifyObject(obj);
+                System.out.println(obj.value); // Output: 20
+            }
+        
+            public static void modifyObject(MyObject obj) {
+                obj.value = 20;
+            }
+        }
+        
+        class MyObject {
+            int value;
+        }</code></pre>
+            <p>However, if you reassign the object reference inside the method, it does not affect the original reference.</p>
+            <pre><code>public class Example {
+            public static void main(String[] args) {
+                MyObject obj = new MyObject();
+                obj.value = 10;
+                reassignObject(obj);
+                System.out.println(obj.value); // Output: 10
+            }
+        
+            public static void reassignObject(MyObject obj) {
+                obj = new MyObject(); // This changes the local reference only
+                obj.value = 20;
+            }
+        }
+        
+        class MyObject {
+            int value;
+        }</code></pre>
+        
+            <h2>Summary</h2>
+            <ul>
+                <li><strong>Primitive Data Types:</strong> Pass-by-value. The method receives a copy of the actual value.</li>
+                <li><strong>Object References:</strong> Pass-by-value. The method receives a copy of the reference to the object, not the actual object itself. Therefore, the method can modify the object via this reference, but it cannot change the reference to point to a different object.</li>
+            </ul>
+            <p>This behavior can be summarized as: Java passes a copy of the variable, whether it's a primitive value or an object reference. This is why Java is considered strictly "pass-by-value."</p>
+            </div>
+            </div>
+    </main>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

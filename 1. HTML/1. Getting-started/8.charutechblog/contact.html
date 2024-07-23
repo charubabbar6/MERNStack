@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Charu</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Charu's Blog</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="contact">
+        <h2>Contact Charu</h2>
+        <p>
+          If you have any questions, feedback, or just want to say hello, feel
+          free to reach out using the contact form below. Charu is always
+          excited to hear from readers and will get back to you as soon as
+          possible.
+        </p>
+
+        <form
+          action="mailto:charubabbar6@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+          <div>
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
+
+        <h3>Other Contact Methods</h3>
+        <p>
+          You can also connect with Charu through social media or via the
+          following email:
+        </p>
+        <ul>
+          <li>
+            Email:
+            <a href="mailto:charubabbar6@gmail.com">charubabbar6@gmail.com</a>
+          </li>
+          <!--<li>
+            Twitter:
+            <a href="https://twitter.com/charu_profile" target="_blank"
+              >Twitter Profile</a
+            >
+          </li>
+          <li>
+            LinkedIn:
+            <a href="https://linkedin.com/in/charu_profile" target="_blank"
+              >LinkedIn Profile</a
+            >
+          </li>-->
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Charu's Blog</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

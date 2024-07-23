@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charu Blog</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Charu's Blog</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="post">
+        <h2>Core Java Interview Questions</h2>
+        <p>
+          Posted on <time datetime="2024-07-21">July 21, 2024</time> by Charu
+        </p>
+        <h3>Strings:</h3>
+
+        <!-- Expandable section for "Why are strings immutable in Java?" -->
+        <div class="expand-collapse">
+          <button class="toggle-button">
+            Why are strings immutable in Java?
+          </button>
+          <div class="content">
+            <p>
+              Strings in Java are immutable, meaning once a String object is
+              created, it cannot be changed. This immutability is a fundamental
+              design decision that provides several significant advantages:
+            </p>
+            <ul>
+              <li>
+                Security: Strings are widely used for storing sensitive data
+                like usernames, passwords, and other configuration details.
+                Immutability ensures that these values cannot be altered once
+                created, thereby enhancing security. For instance, if a String
+                representing a database URL is immutable, it cannot be changed
+                after it has been set.
+              </li>
+              <li>
+                Thread Safety: In a multithreaded environment, immutable objects
+                are inherently thread-safe. Since String objects cannot be
+                changed once created, they can be shared among multiple threads
+                without synchronization. This eliminates the need for complex
+                synchronization mechanisms, reducing the risk of concurrency
+                issues.
+              </li>
+              <li>
+                Caching and Optimization: The immutability of String allows for
+                various optimizations. For example, the Java String Pool (or
+                intern pool) is a special memory region where String literals
+                are stored. When a new String is created, the JVM first checks
+                the pool. If the String already exists, the JVM returns a
+                reference to the pooled instance instead of creating a new one.
+                This reduces memory usage and improves performance.
+              </li>
+              <li>
+                Efficient Hashing: Strings are commonly used as keys in
+                hash-based collections like HashMap. The immutability of String
+                ensures that the hash code remains constant once computed. This
+                makes the behavior of hash-based collections predictable and
+                reliable, as the key's hash code will not change over time.
+              </li>
+              <li>
+                Design Simplicity: Immutable objects are simpler to design,
+                implement, and use. They don't require complex mechanisms to
+                ensure consistency or handle different states. This simplicity
+                can lead to fewer bugs and easier maintenance.
+              </li>
+            </ul>
+            <p>
+              The immutability of String in Java provides security, thread
+              safety, efficiency, and simplicity. These benefits make it a
+              crucial feature that contributes to the robustness and performance
+              of Java applications.
+            </p>
+          </div>
+        </div>
+
+        <!-- Expandable section for "How intern() works?" -->
+        <div class="expand-collapse">
+          <button class="toggle-button">How intern() works?</button>
+          <div class="content">
+            <p>
+              The intern() method in Java is used to optimize memory usage by
+              ensuring that all identical String objects share the same memory.
+              When a String object is interned, it is added to the Java String
+              Pool (also known as the intern pool) if it is not already present,
+              and any subsequent calls to intern() with the same String will
+              return the same instance from the pool.
+            </p>
+            <ul>
+              <li>
+                String Pool: The String Pool is a special memory area in the
+                heap where Java stores literal strings and interned strings.
+              </li>
+              <li>
+                String Literal: When a string literal is created in Java, the
+                JVM checks the String Pool to see if an identical string already
+                exists. If it does, the reference to the existing string is
+                returned. If not, the new string is added to the pool.
+              </li>
+              <li>
+                intern() Method: The intern() method can be called on any String
+                object. When called, it checks the String Pool for an identical
+                string:
+                <ul>
+                  <li>
+                    If the string is found in the pool, the reference to the
+                    existing string is returned.
+                  </li>
+                  <li>
+                    If the string is not found, it is added to the pool, and the
+                    reference to the newly added string is returned.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Why Use intern()?</b>
+                <ul>
+                  <li>
+                    Memory Optimization: By interning strings, you can ensure
+                    that identical strings are stored only once in memory,
+                    reducing memory usage.
+                  </li>
+                  <li>
+                    Performance: Comparing interned strings using == is faster
+                    than using equals() because == checks for reference
+                    equality.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>How intern() Works Internally</b>
+                <ul>
+                  <li>
+                    Internally, the intern() method is native and interacts with
+                    the JVM’s String Pool:
+                  </li>
+                  <li>
+                    When intern() is called, the JVM performs the following
+                    steps:
+                    <ul>
+                      <li>
+                        It checks if the string is already in the String Pool.
+                      </li>
+                      <li>
+                        If the string is found, it returns the reference to the
+                        pooled string.
+                      </li>
+                      <li>
+                        If the string is not found, it adds the string to the
+                        pool and returns the reference to the newly added
+                        string.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <p>
+              Example code:<br />Here’s a simple example to illustrate how
+              intern() works:
+            </p>
+            <pre><code>
+              public class StringInternExample {
+                public static void main(String[] args) {
+                    String s1 = "hello";
+                    String s2 = new String("hello");
+                    String s3 = s2.intern();
+            
+                    System.out.println(s1 == s2); // false
+                    System.out.println(s1 == s3); // true
+                }
+            }
+            
+            </code></pre>
+          </div>
+        </div>
+
+        <!-- Example of another expandable section -->
+        <div class="expand-collapse">
+          <button class="toggle-button">
+            How many objects are created in Strings using string literals and
+            new operator?
+          </button>
+          <div class="content">
+            <p>
+              When discussing how many objects are created in Java using string
+              literals and the `new` operator, it's essential to understand how
+              the Java String Pool works. Here's an explanation and an example:
+            </p>
+
+            <h3>String Literals</h3>
+            <p>
+              String literals are stored in the String Pool, which is a special
+              memory area in the heap. When a string literal is created, the JVM
+              checks if the string already exists in the pool:
+            </p>
+            <ul>
+              <li>
+                If the string exists, the JVM returns a reference to the
+                existing string.
+              </li>
+              <li>
+                If the string does not exist, the JVM creates a new string in
+                the pool and returns a reference to it.
+              </li>
+            </ul>
+
+            <h3>New Operator</h3>
+            <p>
+              The `new` operator always creates a new String object in the heap,
+              even if an identical string exists in the String Pool.
+            </p>
+
+            <h3>Example and Object Creation</h3>
+            <pre><code>
+public class StringObjectCreation {
+    public static void main(String[] args) {
+        String s1 = "hello";   // String literal
+        String s2 = "hello";   // Same string literal, points to the same object in the String Pool
+
+        String s3 = new String("hello"); // Creates a new object in the heap
+        String s4 = new String("hello"); // Creates another new object in the heap
+    }
+}
+            </code></pre>
+
+            <p>Let's analyze how many objects are created in this example:</p>
+            <ol>
+              <li>
+                <code>String s1 = "hello";</code>
+                <ul>
+                  <li>
+                    One string literal "hello" is created in the String Pool.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <code>String s2 = "hello";</code>
+                <ul>
+                  <li>
+                    No new object is created. `s2` references the same object in
+                    the String Pool as `s1`.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <code>String s3 = new String("hello");</code>
+                <ul>
+                  <li>One new object is created in the heap.</li>
+                  <li>
+                    The string literal "hello" already exists in the String
+                    Pool, so no new string in the pool is created.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <code>String s4 = new String("hello");</code>
+                <ul>
+                  <li>One new object is created in the heap.</li>
+                  <li>
+                    The string literal "hello" already exists in the String
+                    Pool, so no new string in the pool is created.
+                  </li>
+                </ul>
+              </li>
+            </ol>
+
+            <h3>Total Number of Objects</h3>
+            <p>
+              One object in the String Pool for the literal "hello". Two objects
+              in the heap created by the `new` operator.
+            </p>
+            <p>
+              So, in total, <b>three</b> String objects are created: One in the
+              String Pool. Two in the heap.
+            </p>
+
+            <h3>Explanation for Other Cases</h3>
+            <ul>
+              <li>
+                <b>Using Only String Literals:</b>
+                <pre><code>
+String a = "test";
+String b = "test";
+                </code></pre>
+                <p>Only one object is created in the String Pool.</p>
+              </li>
+              <li>
+                <b>Using New Operator:</b>
+                <pre><code>
+String c = new String("test");
+String d = new String("test");
+                </code></pre>
+                <p>
+                  Two new objects are created in the heap, while the literal
+                  "test" already exists in the String Pool.
+                </p>
+              </li>
+            </ul>
+
+            <p>
+              Understanding this mechanism helps in optimizing memory usage and
+              performance in Java applications.
+            </p>
+          </div>
+        </div>
+        <div class="expand-collapse">
+          <button class="toggle-button">How String Constant Pool Works?</button>
+          <div class="content">
+            <p>
+              The String Constant Pool (also known as the String Intern Pool) in
+              Java is a special memory region where Java stores string literals.
+              This pool allows for efficient memory usage by ensuring that
+              identical string literals are stored only once.
+            </p>
+            <p>
+              Here's a detailed explanation of how the String Constant Pool
+              works:
+            </p>
+            <ul>
+              <li>
+                <b>String Literals:</b>
+                <ul>
+                  <li>
+                    When a string literal is created in Java, the JVM checks the
+                    String Constant Pool to see if an identical string already
+                    exists.
+                  </li>
+                  <li>
+                    If the string exists, the JVM returns a reference to the
+                    existing string.
+                  </li>
+                  <li>
+                    If the string does not exist, the JVM creates a new string
+                    in the pool and returns a reference to it.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>Using the `new` Operator:</b>
+                <ul>
+                  <li>
+                    The `new` operator always creates a new String object in the
+                    heap, even if an identical string exists in the String Pool.
+                  </li>
+                  <li>
+                    These new objects are not added to the String Pool unless
+                    explicitly interned using the `intern()` method.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <b>`intern()` Method:</b>
+                <ul>
+                  <li>
+                    The `intern()` method can be called on any String object.
+                    When called, it checks the String Pool for an identical
+                    string.
+                  </li>
+                  <li>
+                    If the string is found in the pool, the reference to the
+                    existing string is returned.
+                  </li>
+                  <li>
+                    If the string is not found, it is added to the pool, and the
+                    reference to the newly added string is returned.
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <p>Example and Explanation:</p>
+            <pre>
+<code>
+public class StringConstantPoolExample {
+    public static void main(String[] args) {
+        // String literal, added to the String Pool
+        String s1 = "hello";
+
+        // String literal, references the same object in the String Pool
+        String s2 = "hello";
+
+        // New String object created in the heap
+        String s3 = new String("hello");
+
+        // Interns the String, returns the reference from the String Pool
+        String s4 = s3.intern();
+
+        // New String object created in the heap
+        String s5 = new String("hello");
+
+        // Interns the String, returns the reference from the String Pool
+        String s6 = s5.intern();
+
+        // Output comparisons
+        System.out.println(s1 == s2); // true, both reference the same object in the String Pool
+        System.out.println(s1 == s3); // false, s3 is a new object in the heap
+        System.out.println(s1 == s4); // true, s4 is interned and references the String Pool object
+        System.out.println(s3 == s5); // false, s3 and s5 are different objects in the heap
+        System.out.println(s1 == s6); // true, s6 is interned and references the String Pool object
+    }
+}
+</code>
+            </pre>
+            <p>
+              Understanding how the String Constant Pool works can help optimize
+              memory usage and improve performance in Java applications. By
+              using string literals and the `intern()` method wisely, you can
+              minimize the number of String objects created and ensure that
+              identical strings are stored only once in memory.
+            </p>
+          </div>
+        </div>
+        <div class="expand-collapse">
+          <button class="toggle-button">
+            Difference Between equals and ==
+          </button>
+          <div class="content">
+            <h3>== Operator</h3>
+            <p>
+              The <code>==</code> operator is used to compare the references of
+              two objects to see if they point to the same memory location.
+            </p>
+            <ul>
+              <li>
+                <strong>Purpose:</strong> Compares if two references point to
+                the same object in memory.
+              </li>
+              <li>
+                <strong>Behavior:</strong>
+                <ul>
+                  <li>
+                    For primitive types (e.g., <code>int</code>,
+                    <code>char</code>), <code>==</code> compares the actual
+                    values.
+                  </li>
+                  <li>
+                    For reference types (e.g., objects), <code>==</code> checks
+                    if two references point to the same object instance in
+                    memory.
+                  </li>
+                </ul>
+              </li>
+              <li><strong>Example:</strong></li>
+              <pre><code>
+  String s1 = new String("hello"); 
+  String s2 = new String("hello"); 
+  
+  System.out.println(s1 == s2); // false, because s1 and s2 refer to different objects in memory
+                  </code></pre>
+            </ul>
+            <h3>equals Method</h3>
+            <p>
+              The <code>equals</code> method is used to compare the contents or
+              logical equivalence of two objects. It checks if the objects have
+              the same value or state.
+            </p>
+            <ul>
+              <li>
+                <strong>Purpose:</strong> Compares if the contents or state of
+                two objects are logically equivalent.
+              </li>
+              <li>
+                <strong>Behavior:</strong>
+                <ul>
+                  <li>
+                    The <code>equals</code> method can be overridden in a class
+                    to define what it means for two objects to be considered
+                    equal.
+                  </li>
+                  <li>
+                    The default implementation in the <code>Object</code> class
+                    is similar to <code>==</code>, but many classes override
+                    <code>equals</code> to compare actual contents.
+                  </li>
+                </ul>
+              </li>
+              <li><strong>Example:</strong></li>
+              <pre><code>
+  String s1 = new String("hello"); 
+  String s2 = new String("hello"); 
+  
+  System.out.println(s1.equals(s2)); // true, because s1 and s2 have the same content
+                  </code></pre>
+            </ul>
+            <h3>Detailed Comparison</h3>
+            <ul>
+              <li>
+                <strong>Reference Comparison vs. Content Comparison:</strong>
+                <ul>
+                  <li>
+                    <code>==</code>: Compares object references (memory
+                    locations).
+                  </li>
+                  <li>
+                    <code>equals()</code>: Compares object contents (values),
+                    assuming it is overridden in the class.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Default Behavior:</strong>
+                <ul>
+                  <li>
+                    <code>==</code>: The default comparison is reference-based.
+                  </li>
+                  <li>
+                    <code>equals()</code>: The default implementation in
+                    <code>Object</code> is reference-based, but many classes
+                    provide a custom implementation to compare contents.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Usage with Strings:</strong>
+                <ul>
+                  <li>
+                    <code>==</code> will check if two
+                    <code>String</code> references point to the same memory
+                    location.
+                  </li>
+                  <li>
+                    <code>equals()</code> will check if two
+                    <code>String</code> objects have the same sequence of
+                    characters.
+                  </li>
+                </ul>
+              </li>
+              <li><strong>Example with Custom Objects:</strong></li>
+              <pre><code>
+  class Person {
+      String name;
+      int age;
+  
+      Person(String name, int age) {
+          this.name = name;
+          this.age = age;
+      }
+  
+      @Override
+      public boolean equals(Object obj) {
+          if (this == obj) return true;
+          if (obj == null || getClass() != obj.getClass()) return false;
+          Person person = (Person) obj;
+          return age == person.age && name.equals(person.name);
+      }
+  
+      @Override
+      public int hashCode() {
+          return Objects.hash(name, age);
+      }
+  }
+  
+  public class TestEquality {
+      public static void main(String[] args) {
+          Person p1 = new Person("Charu", 30);
+          Person p2 = new Person("Charu", 30);
+  
+          System.out.println(p1 == p2); // false, different instances
+          System.out.println(p1.equals(p2)); // true, same content
+      }
+  }
+                  </code></pre>
+            </ul>
+          </div>
+        </div>
+
+        <div class="expand-collapse">
+          <button class="toggle-button" aria-expanded="false">
+            Difference Between String, StringBuffer, and StringBuilder
+          </button>
+          <div class="content">
+            <p>
+              <strong>String:</strong> <br />
+              <strong>Immutability:</strong> Strings are immutable in Java,
+              meaning once a String object is created, it cannot be changed. Any
+              modification to a String creates a new String object.<br />
+              <strong>Thread Safety:</strong> Strings are inherently thread-safe
+              due to their immutability.<br />
+              <strong>Performance:</strong> Concatenation with Strings can be
+              less efficient as it creates multiple intermediate String
+              objects.<br />
+              <strong>Use Case:</strong> Best when strings are not modified
+              after creation or where immutability is needed.
+            </p>
+
+            <p>
+              <strong>StringBuffer:</strong> <br />
+              <strong>Mutability:</strong> StringBuffer is mutable, allowing
+              modifications without creating new objects.<br />
+              <strong>Thread Safety:</strong> It is synchronized, making it
+              thread-safe for concurrent modifications.<br />
+              <strong>Performance:</strong> Generally slower than StringBuilder
+              due to synchronization overhead.<br />
+              <strong>Use Case:</strong> Suitable for scenarios where thread
+              safety is required and frequent modifications are needed.
+            </p>
+
+            <p>
+              <strong>StringBuilder:</strong> <br />
+              <strong>Mutability:</strong> Like StringBuffer, StringBuilder is
+              mutable and allows modifications without creating new objects.<br />
+              <strong>Thread Safety:</strong> It is not synchronized, making it
+              faster but not thread-safe.<br />
+              <strong>Performance:</strong> Faster than StringBuffer as it does
+              not have synchronization overhead.<br />
+              <strong>Use Case:</strong> Best for single-threaded scenarios
+              where performance is critical and thread safety is not a concern.
+            </p>
+            <h2>Comparison of String, StringBuffer, and StringBuilder</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Feature</th>
+                  <th>String</th>
+                  <th>StringBuffer</th>
+                  <th>StringBuilder</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Immutability</td>
+                  <td>Immutable</td>
+                  <td>Mutable</td>
+                  <td>Mutable</td>
+                </tr>
+                <tr>
+                  <td>Thread Safety</td>
+                  <td>Thread-safe</td>
+                  <td>Thread-safe (synchronized)</td>
+                  <td>Not thread-safe</td>
+                </tr>
+                <tr>
+                  <td>Performance</td>
+                  <td>Less efficient for frequent changes</td>
+                  <td>Slower due to synchronization</td>
+                  <td>Faster due to lack of synchronization</td>
+                </tr>
+                <tr>
+                  <td>Use Case</td>
+                  <td>Fixed or rarely modified strings</td>
+                  <td>Frequent modifications, thread-safe</td>
+                  <td>Frequent modifications, non-thread-safe</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!--<footer>
+      <p>&copy; 2024 Charu's Blog</p>
+    </footer>-->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

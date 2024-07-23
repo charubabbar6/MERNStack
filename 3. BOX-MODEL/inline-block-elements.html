@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inline-Block elements</title>
+    <style>
+      h2 {
+        /*block elements
+        1. width and height
+        2.margin and padding
+        3.position
+        4. float and clear */
+        background-color: aqua;
+        /* width: 750px;
+        height: 200px; */
+        padding: 30px 20px 30px 20px;
+        margin: 50px;
+        display: inline;
+      }
+      span {
+        /* inline elements
+        1. width and height-can't set it will change according to content can't set it manuallay. If we wants to set width and height then we have to display:block
+        2. margin and padding
+        3. float and clear
+        4. position*/
+        background-color: pink;
+        padding-top: 30px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-bottom: 30px;
+        display: block;
+        width: 300px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      This is also a block level element. It's a 'h2' tag. Lorem ipsum, dolor
+      sit amet consectetur adipisicing elit. Culpa inventore itaque, maiores est
+      incidunt commodi esse officiis quod nihil eligendi iure temporibus
+      consectetur voluptatum vel? Veniam quos odit ab ratione.
+    </h2>
+    <span>this is an inline element - a 'span'.</span>
+  </body>
+</html>
