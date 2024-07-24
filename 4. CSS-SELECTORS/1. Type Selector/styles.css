@@ -1,0 +1,31 @@
+/*Styling  for all h1 element*/
+h1 {
+  color: green;
+  text-align: center;
+  font-size: 50px;
+}
+/*Styling  for all h2 element*/
+h2 {
+  color: darkgreen;
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+}
+/*Styling  for all p element*/
+p {
+  color: darkolivegreen;
+  text-align: center;
+  font-size: 25px;
+  line-height: 1.5;
+}
+/*Styling  for all ul element*/
+ul {
+  list-style: square;
+  margin-left: 20px;
+}
+/*Styling  for all a element*/
+
+a {
+  color: blueviolet;
+  text-decoration: none;
+}

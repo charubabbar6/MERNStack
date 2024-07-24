@@ -1,0 +1,31 @@
+#departments {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid #d5d8d6;
+  margin: 20px;
+  padding: 20px;
+}
+#departments > .department {
+  background-color: #f4f6f7;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 2em;
+}
+
+#departments > .department > h2 {
+  color: #216186;
+  border-bottom: 2px solid #aed6f1;
+}
+#departments > .department > .course {
+  color: #3498db;
+  padding-left: 20px;
+}
+.department > .faculty {
+  background-color: #a1a087;
+  padding: 10px;
+  border: 1px dashed #f1c40f;
+  margin-top: 10px;
+}
+.department > .faculty > p {
+  color: rgb(73, 73, 63);
+  font-weight: bold;
+}

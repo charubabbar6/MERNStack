@@ -1,0 +1,48 @@
+#header {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem 0;
+  text-align: center;
+}
+#name {
+  font-size: 2.5em;
+  margin: 0;
+}
+#about {
+  background-color: rgb(234, 232, 229);
+  padding: 30px;
+  margin: 15px;
+}
+#about-title {
+  color: #333;
+  font-size: 2em;
+}
+#about-description {
+  font-size: 1.2em;
+}
+#project {
+  background-color: antiquewhite;
+  padding: 20px;
+  margin: 15px;
+}
+#project1,
+#project2,
+#project3,
+#project4,
+#project5,
+#project6,
+#project7,
+#project8 {
+  color: chocolate;
+  font-size: 1.2em;
+  margin-left: 15px;
+}
+#footer {
+  background-color: darkblue;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+#contact {
+  font-size: 1.2em;
+}
