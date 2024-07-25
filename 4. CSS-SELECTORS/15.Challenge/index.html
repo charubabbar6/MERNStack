@@ -1,0 +1,101 @@
+<!-- Header Styling:
+
+Select the page header using its class and set its background color to navy blue.
+
+Center the text inside the header and change its color to white.
+
+Main Content Styling:
+
+Use the ID selector to increase the font size of the main article's heading to 22px.
+
+Utilize the class selector to give the highlighted paragraph a background color of light yellow and a left padding of 10px.
+
+List Item Highlight:
+
+Target the first item in the unordered list within the sidebar and bold its text using the child combinator.
+
+Use the pseudo-class selector to change the color of the last list item to dark grey.
+
+Footer Styling:
+
+Directly select the footer element and set the text to align at the center.
+
+Ensure that the footer has a solid top border of 3px in black. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSS Selectors Exercise</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <style>
+      /* Requirement 1: Blue background for page header */
+      .page-header {
+        background-color: blue;
+        text-align: center;
+        color: white;
+      }
+
+      /* Requirement 2: Font size for h1 in page header */
+      h1 {
+        font-size: 24px;
+      }
+      .content {
+        background-color: lightyellow;
+        padding-left: 10px;
+      }
+      #main-article {
+        font-size: 22px;
+      }
+
+      /* Requirement 3: Red text for highlighted paragraph */
+      .highlight {
+        color: red;
+      }
+
+      /* Requirement 4: Bold font for active list item */
+      .sidebar > ul > li:first-child {
+        font-weight: bold;
+      }
+      .sidebar > ul > li:last-child {
+        color: darkgrey;
+      }
+
+      /* Requirement 5: Italic font for the last paragraph in the main article */
+      p:last-child {
+        font-style: italic;
+      }
+
+      /* Requirement 6: Grey background for footer */
+      footer {
+        text-align: center;
+        background-color: grey;
+        border: 3px bold black;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Welcome to CSS Selectors Exercise</h1>
+    </header>
+    <section class="content">
+      <article id="main-article">
+        <h2>Article Heading</h2>
+        <p>First paragraph of the article.</p>
+        <p class="highlight">
+          A highlighted paragraph with important information.
+        </p>
+        <p>Last paragraph of the article.</p>
+      </article>
+      <aside class="sidebar">
+        <ul>
+          <li class="active">Home</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </aside>
+    </section>
+    <footer>
+      <p>Copyright &copy; 2023 by CSS Masters</p>
+    </footer>
+  </body>
+</html>

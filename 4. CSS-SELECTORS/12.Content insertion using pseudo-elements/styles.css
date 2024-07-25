@@ -1,0 +1,78 @@
+body {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  background-color: #b99e84;
+  margin: 0;
+  padding: 20px;
+}
+#recipe-card {
+  background-color: #ffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
+}
+.title {
+  text-align: center;
+  font-size: 32px;
+  color: #704214;
+  margin-bottom: 20px;
+}
+.image {
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  height: 300px; /* Fixed height to maintain rectangle */
+  margin: 0 auto; /* Center the container */
+  overflow: hidden; /* Ensure image stays within container */
+  border: 2px solid #ddd; /* Optional: border around the image */
+  border-radius: 8px; /* Optional: rounded corners */
+  background-color: #fff; /* Optional: background color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* Cover the container while maintaining aspect ratio */
+}
+.time-container {
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.ingredients,
+.steps-container {
+  margin-bottom: 20px;
+}
+h3 {
+  color: #704214;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+.note {
+  text-align: center;
+  background-color: #eaeaea;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  margin-top: 20px;
+}
+/* Pseudo elements */
+.title::before {
+  content: "Delicious ";
+}
+.title::after {
+  content: "🥮";
+}
+.ingredients .ingredient1::marker {
+  content: "🥛 ";
+  margin-right: 5px;
+}
+.ingredients .ingredient2::marker {
+  content: "🥄 ";
+  margin-right: 5px;
+}
+.note::before {
+  content: "📌";
+  font-weight: bold;
+}

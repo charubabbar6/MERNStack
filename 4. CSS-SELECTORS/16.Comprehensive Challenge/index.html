@@ -1,0 +1,91 @@
+<!-- Objectives:
+
+Color All Paragraphs Blue: Select all <p> elements and change their text color to blue.
+
+Yellow Background for Special Element: Apply a yellow background color to the element with the ID special.
+
+Bold Highlighted Text: Make the text of all elements with the class highlight bold.
+
+Green Text in the First List: Change the text color of the first unordered list (<ul>) in the document to green.
+
+Underline First List Item: Underline the first list item (<li>) in each unordered list.
+
+Red Border for Text Inputs: Give all text input fields (input[type="text"]) a red border.
+
+Larger Font in Div Paragraphs: Increase the font size of all paragraphs (<p>) that are direct children of a <div> element.
+
+Border for the Last Paragraph: Add a 2px solid black border to the last paragraph in the document.
+
+Orange Hover Color for Links: Change the color of links (<a>) to orange when they are hovered over. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Selectors Challenge</title>
+    <style>
+      /* Selects all <p> elements and changes their font color to blue */
+      p {
+        color: blue;
+      }
+      /* Selects the element with id="special" and changes its background color */
+      #special {
+        background-color: yellow;
+      }
+
+      /* Selects all elements with class="highlight" and makes the text bold */
+      .highlight {
+        font-weight: bold;
+      }
+
+      /* Selects the first <ul> element in the document and changes its text color */
+      ul:first-of-type {
+        color: green;
+      }
+
+      /* Selects the first <li> element of each <ul> and changes its text decoration */
+      ul > li:first-child {
+        text-decoration: underline;
+      }
+
+      /* Selects input elements of type 'text' and changes the border color */
+      input[type="text"] {
+        border: 2px solid red;
+      }
+
+      /* Selects all <p> elements inside <div> and changes their font size */
+      div p {
+        font-size: large;
+      }
+
+      /* Selects the last <p> element in the document */
+      p:last-of-type {
+        /* color: red; */
+        border: 2px solid black;
+      }
+
+      /* Hover effect on links */
+      a:hover {
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>This is a paragraph inside a div.</p>
+      <p id="special">This is a special paragraph with an ID.</p>
+      <p class="highlight">This is a highlighted paragraph.</p>
+    </div>
+    <ul>
+      <li>First item of first list</li>
+      <li>Second item</li>
+    </ul>
+    <ul>
+      <li>First item of second list</li>
+      <li>Second item</li>
+    </ul>
+    <input type="text" placeholder="Text input" />
+    <p>A standalone paragraph.</p>
+    <a href="#">Hover over this link</a>
+  </body>
+</html>

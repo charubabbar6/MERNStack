@@ -1,0 +1,123 @@
+<!-- Advanced CSS Selector Challenge: Styling a Blog Page
+Tasks
+
+Descendant Selector:
+
+Style all h2 elements within article tags that are nested inside section tags.
+
+Apply a dark blue color to these h2 elements.
+
+Child Selector:
+
+Target the first-level list items (li) directly inside the nav element.
+
+Set their font weight to bold.
+
+Adjacent Sibling Selector:
+
+Select and style the paragraph (p) that immediately follows each h2 tag.
+
+Apply an italic font style to these paragraphs.
+
+General Sibling Selector:
+
+Style all list items (li) that follow an item with the class .highlight.
+
+Change their text color to green.
+
+Attribute Selector:
+
+Target all links (a tags) that have an href attribute starting with "https".
+
+Append "(secure)" to the display text of these links.
+
+Pseudo-class Selector:
+
+Apply a background color to odd-numbered table rows (tr) only.
+
+Use light gray as the background color. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced CSS Selectors - Blog Page</title>
+    <style>
+      /* Descendant Selector - Targeting article titles within sections */
+      section h2 {
+        color: darkblue;
+      }
+
+      /* Child Selector - Targeting first-level list items in nav */
+      nav > ul > li {
+        font-weight: bold;
+      }
+
+      /* Adjacent Sibling Selector - Styling the paragraph immediately after H2 */
+      h2 + p {
+        font-style: italic;
+      }
+
+      /* General Sibling Selector - Styling list items followed by a specific class */
+      .highlight ~ li {
+        color: green;
+      }
+
+      /* Attribute Selector - Targeting links with 'https' protocol */
+
+      a[href^="https"]::after {
+        content: "(secure)";
+      }
+
+      /* Pseudo-class Selector - Styling only odd rows in a table */
+      tr:nth-child(odd) {
+        background-color: lightgrey;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li>About</li>
+        <li>Blog</li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <h2>Understanding CSS Selectors</h2>
+        <p>The world of CSS selectors is vast and varied...</p>
+      </article>
+      <article>
+        <h2>Advanced CSS Techniques</h2>
+        <p>Explore advanced techniques and tricks in CSS...</p>
+      </article>
+    </section>
+
+    <ul>
+      <li class="highlight">Highlighted Item</li>
+      <li>General Item 1</li>
+      <li>General Item 2</li>
+    </ul>
+
+    <table>
+      <tr>
+        <td>Row 1, Cell 1</td>
+        <td>Row 1, Cell 2</td>
+      </tr>
+      <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+      </tr>
+      <tr>
+        <td>Row 3, Cell 1</td>
+        <td>Row 3, Cell 2</td>
+      </tr>
+    </table>
+
+    <footer>
+      <a href="https://example.com">Visit our secure site</a>
+    </footer>
+  </body>
+</html>

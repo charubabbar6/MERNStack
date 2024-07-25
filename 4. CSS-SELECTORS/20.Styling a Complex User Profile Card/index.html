@@ -1,0 +1,133 @@
+<!-- Advanced CSS Selector Challenge - Styling a Complex User Profile Card
+Requirements:
+
+Profile Card Container:
+
+Use an attribute selector to style the main container (div[class^='profile-card']). It should have a white background, rounded corners, and a box shadow.
+
+Profile Image:
+
+Style the profile image to cover the entire width of the card. It should be the first child of the profile card container.
+
+Name and Job Title:
+
+Style the name (class="name") with a larger font size and bold font weight.
+
+The job title (class="title") should be styled with a grey color. It should be an adjacent sibling to the name element.
+
+Contact Information:
+
+Use the general sibling combinator to style the contact information section which follows the name.
+
+Style the email link using an attribute value contains selector. It should change appearance on hover.
+
+Use pseudo-elements to add a blue colored bullet point before each list item in the contact info.
+
+Alternating List Item Colors:
+
+Apply alternating background colors for the list items in the contact information using the :nth-child pseudo-class.
+
+Status Styling:
+
+Style the status text. Use the :not pseudo-class to differentiate between active and non-active statuses. -->
+<html>
+  <head>
+    <title>Advanced CSS Selector Challenge</title>
+    <style>
+      /* General body styling */
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #e9ecef;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      /* Main card container styling using attribute selector */
+      div[class^="profile-card"] {
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Profile image styling */
+      .profile-card > img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Profile details */
+      .profile-details {
+        padding: 20px;
+      }
+
+      /* Name styling - direct child combinator */
+      .profile-details > .name {
+        font-size: larger;
+        font-weight: 600;
+      }
+
+      /* Job title styling - adjacent sibling combinator */
+      .name + .title {
+        color: #6c757d;
+      }
+
+      /* Contact info - general sibling combinator */
+      .name ~ contact-info {
+        margin-top: 10px;
+      }
+
+      /* Link styling - attribute value contains selector */
+      a[href*="mailto"] {
+        color: #007bff;
+        text-decoration: none;
+      }
+      a[href*="email"]:hover {
+        color: darkblue;
+        text-decoration: underline;
+      }
+
+      /* Pseudo-element ::before for list items */
+      .contact-info li::before {
+        content: "🔵";
+        color: #007bff;
+        font-size: 1.2em;
+        margin-right: 5px;
+      }
+
+      /* Pseudo-class :nth-child for alternating list item colors */
+      .contact-info li:nth-child(odd) {
+        background-color: rgb(248, 249, 250);
+      }
+
+      /* Pseudo-class :not to style non-active status */
+      .status span:not(.active) {
+        font-style: bold;
+        color: #dc3545;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="profile-card">
+      <img
+        src="https://cdn.pixabay.com/photo/2023/10/01/12/56/shih-tzu-8287355_1280.jpg"
+        alt="Profile Image"
+      />
+      <div class="profile-details">
+        <div class="name">Jane Doe</div>
+        <div class="title">Web Developer</div>
+        <ul class="contact-info">
+          <li>
+            <a href="mailto:jane.doe@example.com">jane.doe@example.com</a>
+          </li>
+          <li>Website: <a href="http://www.example.com">www.example.com</a></li>
+          <li>Location: New York, USA</li>
+        </ul>
+        <div class="status">Status: <span class="active">Active</span></div>
+      </div>
+    </div>
+  </body>
+</html>

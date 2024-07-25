@@ -1,0 +1,127 @@
+<!-- Requirements:
+
+Header Styling:
+
+The header should have a background color of #333 (dark gray) and the text color should be white.
+
+Use the class selector .header for styling.
+
+Main Content Styling:
+
+The main content area should have a padding of 20px.
+
+Style the paragraphs (<p>) inside the main content area so they have a text color of #555 (a medium shade of gray).
+
+Use the ID selector #main-content for styling.
+
+Navigation Bar:
+
+Style the list items in the navigation bar so that they are displayed inline with a margin to the right.
+
+Use the child selector .nav > li for this task.
+
+Link Styling:
+
+Links (<a> tags) with the target attribute should have a text color of red.
+
+When hovered over, links should change their color to green.
+
+Special Paragraph Styling:
+
+The first paragraph in the main content area should have a larger font size for emphasis.
+
+The last paragraph should have its text color set to blue.
+
+Use pseudo-class selectors for these styles.
+
+Footer Styling:
+
+Before the footer content, add a pseudo-element with the text 'Footer Content'.
+
+The footer should have a background color of #ddd (light gray) and centered text alignment. -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Landing Page</title>
+    <style>
+      /* Fill the comments tasks */
+
+      /* Universal selector to set box-sizing for all elements */
+      * {
+        box-sizing: border-box;
+      }
+      /* Body selector to set the font and background */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: fixed;
+      }
+
+      /* Class selector for the header */
+      .header {
+        background-color: #333;
+        color: white;
+      }
+
+      /* ID selector for the main content area */
+      #main-content {
+        padding: 20px;
+      }
+      /* Descendant selector to style paragraphs inside main content */
+      #main-content p {
+        color: #555;
+      }
+      /* Child selector to style only direct list items under .nav */
+      .nav > li {
+        display: inline;
+        margin-right: 20px;
+      }
+
+      /* Attribute selector to style links with a target attribute */
+
+      a:target {
+        color: red;
+      }
+
+      /* Pseudo-class selector for hover state on links */
+      a:hover {
+        color: green;
+      }
+      /* First child pseudo-class selector for special styling of the first paragraph */
+      #main-content p:first-of-type {
+        font-size: larger;
+      }
+      /* Last child pseudo-class selector for the last paragraph */
+      #main-content p:last-of-type {
+        color: blue;
+      }
+      /* Pseudo-element selector for adding content before the footer */
+      .footer::before {
+        content: "Footer Content";
+      }
+      /* Class selector for the footer */
+      .footer {
+        background-color: #ddd;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>My Company</h1>
+    </div>
+    <ul class="nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#" target="_blank">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div id="main-content">
+      <p>Welcome to our company website!</p>
+      <p>Here you can find information about our services and team.</p>
+      <p>Last paragraph with a special color.</p>
+    </div>
+    <div class="footer">&copy; 2023 My Company</div>
+  </body>
+</html>
