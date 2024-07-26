@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Positioning Example</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      main {
+        position: relative;
+        top: 50px;
+        padding: 20px;
+      }
+      .box {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #f00;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        font-size: 20px;
+      }
+      #box-1 {
+        top: 0;
+        left: 0;
+      }
+      #box-2 {
+        top: 0;
+        right: 0;
+      }
+      #box-3 {
+        bottom: 0;
+        left: 0;
+      }
+      footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 50px;
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Positioning Example</h1>
+    </header>
+    <main>
+      <div id="box-1" class="box">1</div>
+      <div id="box-2" class="box">2</div>
+      <div id="box-3" class="box">3</div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut
+        semper magna. Etiam efficitur vitae velit vel ullamcorper. Donec
+        fringilla, lacus sed semper venenatis, massa lorem faucibus tortor, eget
+        rhoncus ex justo a nibh. Integer id leo id nulla eleifend interdum vitae
+        eget ex. Pellentesque vitae risus sit amet odio blandit rutrum. Ut
+        vestibulum ante velit, non feugiat dolor malesuada non. Nam in blandit
+        mauris. Aliquam eget ex eu mauris fermentum sagittis vitae quis ex.
+        Integer ut vestibulum est, eget rutrum velit. Proin vel turpis magna.
+        Vestibulum volutpat risus elit, vel dictum quam tristique sit amet. Sed
+        commodo, enim id imperdiet dictum, lectus ipsum blandit ante, vel
+        feugiat nunc tortor eget metus. Nam aliquet libero eu dui placerat, non
+        consequat lectus venenatis. Sed faucibus a ex vel sagittis. Suspendisse
+        potenti. Sed tincidunt laoreet ipsum, quis placerat nunc ultricies eu.
+        Curabitur sit amet eros eget leo consequat tristique at vel nunc.
+      </p>
+    </main>
+    <footer>
+      <p>&copy; 2023 My Company</p>
+    </footer>
+  </body>
+</html>
