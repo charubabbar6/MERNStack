@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #f5f5f5;
+}
+header {
+  background-color: #fff;
+  height: 40vh;
+  width: 100%;
+}
+.wrapper {
+  margin: 0 auto;
+  max-width: max-content;
+  text-align: center;
+  padding-top: 20px;
+}
+header a {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #000;
+  padding: 10px;
+  font-size: 20px;
+  background-color: #ff006c;
+}
+h1,
+p {
+  font-size: 20px;
+  padding: 10px;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+
+  position: relative;
+}
+.right {
+  width: 30%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  border-left: 1px solid black;
+}
+.left {
+  width: 65%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  position: relative; /* Make sure the .left div is relative */
+}
+img {
+  width: 200px;
+  height: 200px;
+  padding: 5px;
+}
+/* .alert {
+  position: absolute; Position the .alert div absolutely
+  top: 10px; Adjust top positioning as needed 
+  left: 700px;  Adjust left positioning as needed 
+} */
+
+.alert button {
+  background-color: #bc6c25;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 10px;
+  width: 55px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.promo {
+  position: fixed;
+  bottom: 0;
+  width: 500px;
+}
+.promo button {
+  background-color: red;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.promo button:hover {
+  opacity: 0.8;
+}
