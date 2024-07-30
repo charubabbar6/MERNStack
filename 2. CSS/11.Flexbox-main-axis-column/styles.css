@@ -1,0 +1,23 @@
+/* Flexbox */
+.container {
+  background-color: dodgerblue;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  width: 100px;
+  height: 100px;
+  background-color: lightskyblue;
+  text-align: center;
+  font-size: 24px;
+  margin: 5px;
+}
+
+/* Different colors for demo */
+.item:nth-child(odd) {
+  background-color: lightsalmon;
+}
+.item:nth-child(even) {
+  background-color: palegreen;
+}
