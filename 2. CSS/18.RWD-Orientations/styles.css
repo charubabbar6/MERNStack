@@ -1,0 +1,19 @@
+/*base styles*/
+.box {
+  width: 100%;
+  height: 200px;
+}
+@media screen and (orientation: landscape) {
+  .box {
+    background-color: chocolate;
+    color: greenyellow;
+    font-size: 100px;
+  }
+}
+@media screen and (orientation: portrait) {
+  .box {
+    background-color: blueviolet;
+    color: white;
+    font-size: 60px;
+  }
+}
