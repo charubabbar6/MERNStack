@@ -1,0 +1,22 @@
+1. https://vitejs.dev/guide/
+2. Right click on REACT-INSTALLATION FOLDER AND PRESS "OPEN IN INTEGRATED TERMINLA"
+3. in terminal ,copy command "npm create vite@latest" and paste in terminal
+and ok to proceed-y project name: .
+
+and select react as framework and variant as javascript.
+and write "npm i" to install.
+4. run the project via:"npm run dev",copy link: http://localhost:5173/ and open in browser
+
+5. add bootstrap css and javascript
+6. use react bootstrap libreries from here:"https://react-bootstrap.netlify.app/docs/getting-started/introduction"
+"https://react-bootstrap.netlify.app/docs/components/accordion"
+
+7. Install:"https://react-bootstrap.netlify.app/docs/getting-started/introduction" using this link
+terminate previous job in terminal by using ctrl+c and clear using clear
+8.copy: "npm install react-bootstrap bootstrap" in terminal
+9. follow through above guide.
+10. include css :{
+  /* The following line can be included in your src/index.js or App.js file */
+}
+import 'bootstrap/dist/css/bootstrap.min.css';
+11.
