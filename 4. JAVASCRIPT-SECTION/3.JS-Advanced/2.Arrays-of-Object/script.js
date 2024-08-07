@@ -433,3 +433,79 @@ if (isCartTotalAbove(updatedCart, 1500)) {
 } else {
   // console.log("updated cart", updatedCart);
 }
+//---
+//Object.assign()
+//--
+
+//updating properties of students in a class
+const studentsArr = [
+  { id: 1, name: "Charu", grade: "A" },
+  { id: 2, name: "Arjun", grade: "B" },
+];
+
+//Grade updates
+const gradeUpdates = [
+  { grade: "A+" }, // Update for student at index 0
+  { grade: "A-" }, // Update for student at index 1
+];
+// Create a new array of updated student objects
+//Update the students
+const updatedStudents = studentsArr.map((student, index) => {
+  // Merge the current student object with the corresponding grade update
+  return Object.assign(
+    {}, // Create a new empty object as the target
+    student, // Copy properties from the current student object
+    gradeUpdates[index]
+  ); // Copy properties from the corresponding grade update object
+});
+//console.log(updatedStudents);
+
+//--
+//Search and Filter using `find()`
+//--
+
+//Finding the First Patient with a Specific Ailment in a Hospital Database
+
+const patients = [
+  { id: 101, name: "Sarah", disease: "Cold" },
+  { id: 102, name: "Mike", disease: "Fever" },
+  { id: 103, name: "Lucy", disease: "Cold" },
+];
+
+//Patient with cold
+
+const patientWithCold = patients.find((patient) => patient.disease === "Cold");
+
+//console.log(patientWithCold);
+
+//--
+//Search and Filter using `some()`
+//--
+
+const patients2 = [
+  { id: 101, name: "Sarah", disease: "Cold" },
+  { id: 102, name: "Mike", disease: "Fever" },
+  { id: 103, name: "Lucy", disease: "Cold" },
+];
+//Patient with cold
+const patienyWithCold2 = patients2.some(
+  (patient) => patient.disease === "Cold"
+);
+
+// console.log(patienyWithCold2);
+// console.log(patientWithCold);
+
+//----
+//Search and Filter using `every()`
+//---
+
+//Confirming All Students Passed Their Exam
+
+const techStudents = [
+  { id: 1, name: "Charu", grade: "A" },
+  { id: 2, name: "Arjun", grade: "F" },
+  { id: 3, name: "Dolly", grade: "A" },
+];
+const allPassed = techStudents.every((student) => student.grade !== "F");
+
+console.log(allPassed);
