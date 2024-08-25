@@ -154,8 +154,8 @@ const endingText = phrase.slice(-6);
 
 //slicing between negative indices
 const sentence2 = "Hello, world";
-const result3 = sentence2.slice(-6, -1);
-//console.log(result3);
+const result3 = sentence2.slice(-4, -1);
+console.log(result3); //orl
 
 //---------
 //==STRING SPLIT===
@@ -217,6 +217,20 @@ const lastIndx = myText.lastIndexOf("apple");
 
 //Specifying the from index
 // const result = myText.lastIndexOf('apple',12)
+const userActions = "click|scroll|click|hover|submit|click";
+const submitIndex = userActions.indexOf("submit"); //25
+const lastClickBeforeSubmit = userActions.lastIndexOf("click", submitIndex); //13
+
+const message = "Please review the attached document before the meeting.";
+//console.log(message.length);//55
+//console.log(message.indexOf("meeting")); //47
+
+const cutoffIndex = 50; // Character limit
+const lastSpaceBeforeCutoff = message.lastIndexOf(" ", cutoffIndex); //46
+const lastWordBeforeCutoff = message.substring(
+  lastSpaceBeforeCutoff + 1,
+  cutoffIndex
+);
 
 //---------
 //==STRING INCLUDES===
@@ -235,10 +249,35 @@ const result = myText2.includes("apple", 8);
 //---------
 //==STRING CONVERSION===
 //----------
+// Syntax and Usage
+// String(num):
+
+// This is a global function that can be used to convert any value (not just numbers) to a string.
+// It can be used with different types (numbers, booleans, arrays, etc.).
+
+// num.toString():
+
+// This is a method that is called on a number (or other objects that have a toString method).
+// It is specifically tied to the object instance, meaning it can only be used on numbers or other objects that have this method.
+// String(value):
+
+// When value is null, it returns the string "null".
+// When value is undefined, it returns the string "undefined".
+// value.toString():
+
+// If value is null or undefined, calling toString() will throw a TypeError because null and undefined do not have a toString method.
 
 //Converting a number to a string;
 const num = 42;
 const strNum = String(num);
+
+const numb = 255;
+//String(num)
+String(numb); // "255"
+
+//num.toString(base):
+numb.toString(16); // "ff" (hexadecimal)
+numb.toString(2); // "11111111" (binary)
 
 //Converting a boolean to a string;
 const boolVal = true;
