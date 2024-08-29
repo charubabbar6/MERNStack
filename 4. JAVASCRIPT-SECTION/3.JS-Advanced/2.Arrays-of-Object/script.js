@@ -436,6 +436,54 @@ if (isCartTotalAbove(updatedCart, 1500)) {
 //---
 //Object.assign()
 //--
+const target = { a: 1, b: 2 };
+const source1 = { b: 4, c: 5 };
+const source2 = { d: 6 };
+
+const merged = Object.assign(target, source1, source2);
+
+console.log(merged);
+
+const original = { a: 1, b: 2 };
+const clone = Object.assign({}, original);
+console.log(clone);
+clone.a = 10;
+console.log(original.a);
+
+const obj = { a: 1 };
+
+Object.assign(obj, { b: 2, c: 3 });
+
+console.log(obj);
+
+const obj1 = { a: 1, nested: { b: 2 } };
+const obj2 = Object.assign({}, obj1);
+
+obj2.nested.b = 3;
+
+console.log(obj1.nested.b); // Output: 3
+
+const defaultConfig = { theme: "light", showSidebar: true };
+const userConfig = { theme: "dark" };
+
+const finalConfig = Object.assign({}, defaultConfig, userConfig);
+
+console.log(finalConfig);
+// Output: { theme: "dark", showSidebar: true }
+
+const state = { counter: 10, user: { name: "Alice" } };
+const newState = Object.assign({}, state, { counter: state.counter + 1 });
+
+console.log(newState);
+// Output: { counter: 11, user: { name: "Alice" } }
+const defaults = { logLevel: "warn", outputPath: "/logs" };
+const options = { logLevel: "info", debug: true };
+const config = { env: "production" };
+
+const finalSettings = Object.assign({}, defaults, options, config);
+
+console.log(finalSettings);
+// Output: { logLevel: "info", outputPath: "/logs", debug: true, env: "production" }
 
 //updating properties of students in a class
 const studentsArr = [
