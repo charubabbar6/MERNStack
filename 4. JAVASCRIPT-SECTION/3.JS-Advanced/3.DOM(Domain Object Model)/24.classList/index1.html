@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Mode Example</title>
+    <style>
+      body.dark-mode {
+        background-color: black;
+        color: white;
+      }
+      .highlight {
+        border: 2px solid blue;
+      }
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+      }
+
+      .large {
+        width: 200px;
+        height: 200px;
+      }
+
+      .red {
+        background-color: red;
+      }
+      /* Define visible class (could be empty if default behavior is visible) */
+      .visible {
+        display: block;
+        padding: 10px;
+        background-color: lightblue;
+        border: 1px solid blue;
+        margin-top: 10px;
+      }
+      /* Optional: Style the button */
+      button {
+        padding: 8px 16px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+      /* Define hidden class to hide the element */
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+    <button id="toggleDarkMode">Toggle Dark Mode</button>
+    <br /><br />
+    <div id="content" class="visible">This content is visible.</div>
+    <button id="toggleVisibility">Toggle Visibility</button>
+    <br /><br />
+    <div id="box" class="box">Test Div</div>
+    <button id="styleButton">Change Style</button>
+    <script src="script1.js"></script>
+  </body>
+</html>
