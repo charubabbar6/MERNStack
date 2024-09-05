@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Currency Converter</h1>
+      <p class="app-description">
+        Real-time currency converter at your fingertips
+      </p>
+      <div class="toggle-container">
+        <button class="toggle-btn active" data-mode="convert">Convert</button>
+        <button class="toggle-btn" data-mode="exchange">Exchange Rates</button>
+      </div>
+
+      <div id="convert-mode" class="content active">
+        <div class="input-group">
+          <label for="amount">Amount</label>
+          <input
+            type="number"
+            id="amount"
+            placeholder="Enter amount"
+            required
+          />
+        </div>
+        <div class="input-group">
+          <label for="from-currency">From</label>
+          <select id="from-currency" required>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="INR">INR</option>
+            <option value="JPY">JPY</option>
+          </select>
+        </div>
+        <div class="input-group">
+          <label for="to-currency">To</label>
+          <select id="to-currency" required>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="INR">INR</option>
+            <option value="JPY">JPY</option>
+          </select>
+        </div>
+        <button id="convert-btn">
+          <i data-feather="refresh-cw" class="currency-icon"></i>Convert
+        </button>
+        <!-- <button onclick="convertCurrency()">Convert</button> -->
+        <div class="result" id="result"></div>
+      </div>
+
+      <div id="exchange-mode" class="content">
+        <div class="input-group">
+          <label for="base-currency">Base Currency</label>
+          <select id="base-currency" required>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="INR">INR</option>
+            <option value="JPY">JPY</option>
+          </select>
+        </div>
+        <!-- Exchange rates content goes here -->
+        <button id="get-rates-btn">
+          <i data-feather="list" class="currency-icon"></i>Get Exchange Rates
+        </button>
+        <!-- <button onclick="exchangecurrency()">Get Exchange Rates</button> -->
+        <div class="exchange-rates" id="exchange-rates"></div>
+      </div>
+      <footer>Built by Charu Babbar</footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
