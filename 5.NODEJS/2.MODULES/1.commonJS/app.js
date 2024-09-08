@@ -1,0 +1,17 @@
+//const utills = require("./utills");
+//const { add, subtract } = require("./utills");
+console.log("application started");
+//console.log(module);
+//console.log(utills);
+//console.log(utills("charu"));
+// const { add, subtract } = utills;
+// console.log(utills.add(10, 5));
+// console.log(utills.subtract(10, 5));
+//console.log(subtract(10, 5));
+//console.log(add(10, 5));
+const { sayBye, sayHi } = require("./utills");
+//console.log(utills.sayHi(`Charu`));
+//console.log(utills.sayBye(`Charu`));
+console.log(sayHi(`Charu`), sayBye(`Charu`));
+const { sayHello, sayGoodBye } = require("./utills");
+console.log(sayHello(`Arjun`), sayGoodBye(`Arjun`));

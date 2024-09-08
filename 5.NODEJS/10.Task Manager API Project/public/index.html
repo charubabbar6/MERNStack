@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <h1>Task Manager</h1>
+
+    <!-- User Login (visible by default) -->
+    <section id="login">
+      <h2>Login</h2>
+      <form id="loginForm">
+        <input type="text" id="loginUsername" placeholder="Username" required />
+        <input
+          type="password"
+          id="loginPassword"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Login</button>
+      </form>
+      <p>
+        Don't have an account? <a href="#" id="goToRegister">Register here</a>
+      </p>
+    </section>
+    <!-- User Registration (hidden by default) -->
+
+    <section id="register" style="display: none">
+      <h2>Register</h2>
+      <form id="registerForm">
+        <input
+          type="text"
+          id="registerUsername"
+          placeholder="Username"
+          required
+        />
+        <input
+          type="password"
+          id="registerPassword"
+          placeholder="Password"
+          required
+        />
+        <button type="submit">Register</button>
+      </form>
+      <p>Already have an account? <a href="#" id="goToLogin">Login here</a></p>
+    </section>
+
+    <!-- Task Management -->
+    <section id="tasks" style="display: none">
+      <h2>Tasks</h2>
+      <form id="taskForm">
+        <input type="text" id="taskTitle" placeholder="Title" required />
+        <input type="text" id="taskDescription" placeholder="Description" />
+        <select id="taskStatus">
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+        <button type="submit">Create Task</button>
+      </form>
+      <ul id="taskList"></ul>
+      <!-- Logout Button -->
+      <button id="logoutButton">Logout</button>
+    </section>
+
+    <!-- Task Update -->
+    <section id="taskUpdate" style="display: none">
+      <h2>Update Task</h2>
+      <form id="updateForm">
+        <input type="hidden" id="updateTaskId" />
+        <input type="text" id="updateTitle" placeholder="Title" required />
+        <input type="text" id="updateDescription" placeholder="Description" />
+        <select id="updateStatus">
+          <option value="pending">Pending</option>
+          <option value="completed">Completed</option>
+        </select>
+        <button type="submit">Update Task</button>
+        <button type="button" id="cancelUpdate">Cancel</button>
+      </form>
+    </section>
+
+    <script src="/public/script.js"></script>
+  </body>
+</html>
