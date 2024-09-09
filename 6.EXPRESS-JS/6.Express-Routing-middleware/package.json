@@ -1,0 +1,17 @@
+{
+  "name": "6.express-routing-middleware",
+  "version": "1.0.0",
+  "description": "express routing middleware",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

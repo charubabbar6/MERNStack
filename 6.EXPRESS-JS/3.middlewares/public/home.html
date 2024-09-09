@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Actions</title>
+    <style>
+      /* Hide the error section initially */
+      #errorSection {
+        display: none;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to the User Management System</h1>
+
+    <!-- Register Form -->
+    <h2>Register</h2>
+    <form action="/users/register" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <br /><br />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <br /><br />
+      <button type="submit">Register</button>
+    </form>
+
+    <!-- Login Form -->
+    <h2>Login</h2>
+    <form action="/users/login" method="POST">
+      <label for="email">Email:</label>
+      <input type="email" id="loginEmail" name="email" required />
+      <br /><br />
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" />
+      <br /><br />
+      <button type="submit">Login</button>
+    </form>
+    <!-- Error Section -->
+    <div id="errorSection">
+      <h2>Cause an Error</h2>
+      <a href="/cause-error">Trigger Error</a>
+    </div>
+
+    <!-- Button to Show Error Section -->
+    <button id="showErrorButton">Show Error Section</button>
+
+    <script>
+      // JavaScript to handle showing the error section
+      document
+        .getElementById("showErrorButton")
+        .addEventListener("click", function () {
+          document.getElementById("errorSection").style.display = "block";
+          this.style.display = "none"; // Hide the button after clicking
+        });
+    </script>
+  </body>
+</html>

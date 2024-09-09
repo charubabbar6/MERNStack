@@ -1,0 +1,21 @@
+{
+  "name": "3.middlewares",
+  "version": "1.0.0",
+  "description": "\"Simple API for a book without DB\"",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "keywords": [
+    "\"Express\""
+  ],
+  "author": "Charu Babbar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
