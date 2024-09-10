@@ -157,6 +157,7 @@ and change in package.json:
 },
 
 and now we use command npm run server
+<<<<<<< HEAD
 ..........................
 For EJS template, In terminal run this command:
 "npm i ejs"
@@ -192,3 +193,5 @@ Tags(common EJS syntax)
     .........................
     express ejs layout:
     "npm i express-ejs-layouts" in terminal
+=======
+>>>>>>> f346cb0da3604a0b6f5f1b6a9aba3c6838c56c6c
