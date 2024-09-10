@@ -1,0 +1,18 @@
+{
+  "name": "9.ejs-partials",
+  "version": "1.0.0",
+  "description": "EJS Partial",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.20.0"
+  }
+}

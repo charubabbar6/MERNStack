@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grammar Checker</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .container {
+        max-width: 800px;
+        margin: auto;
+      }
+      textarea {
+        width: 100%;
+        height: 150px;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Grammar Checker</h1>
+      <form action="/correct" method="post">
+        <textarea name="text" placeholder="Enter your text here..."></textarea>
+        <button type="submit">Check Grammar</button>
+      </form>
+    </div>
+  </body>
+</html>
