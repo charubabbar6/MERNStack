@@ -1,0 +1,21 @@
+{
+  "name": "2.-mongodb-crud-app",
+  "version": "1.0.0",
+  "description": "Implement CRUD (Create, Read, Update, Delete) operations in a application.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "mongo"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.0",
+    "mongodb": "^6.8.1"
+  }
+}

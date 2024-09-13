@@ -1,0 +1,20 @@
+{
+  "name": "1.node-mongodb-atlas",
+  "version": "1.0.0",
+  "description": "Create a Node.js app that connects to MongoDB Atlas. Implement a feature to add and retrieve data from the database. Focus on backend logic and database interaction.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node",
+    "mongodb"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.20.0",
+    "mongodb": "^6.8.1"
+  }
+}

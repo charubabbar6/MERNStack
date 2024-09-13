@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MongoDB Atlas App</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Error / Success Message -->
+      <div id="message"></div>
+
+      <h1>MongoDB Atlas Interaction</h1>
+
+      <!-- Form to add an item -->
+      <h2>Add Item</h2>
+      <form id="add-item-form">
+        <input type="text" id="item-name" placeholder="Item Name" required />
+        <input type="number" id="item-price" placeholder="Price" required />
+        <button type="submit">Add Item</button>
+      </form>
+
+      <!-- Button to get all items -->
+      <h2>Retrieve Items</h2>
+      <button id="get-items">Get All Items</button>
+      <div id="items-list"></div>
+
+      <!-- Retrieve Item Form -->
+      <h2>Retrieve particular Item</h2>
+      <form id="retrieve-item-form">
+        <input type="text" id="retrieve-id" placeholder="Item ID" required />
+        <button type="submit">Retrieve Item</button>
+      </form>
+      <div id="result"></div>
+      <!-- Form to update an item -->
+      <h2>Update Item</h2>
+      <form id="update-item-form">
+        <input type="text" id="update-name" placeholder="Item Name" required />
+        <input
+          type="number"
+          id="update-price"
+          placeholder="New Price"
+          required
+        />
+        <button type="submit">Update Item</button>
+      </form>
+      <div id="update-message"></div>
+      <!-- Delete Item Form -->
+      <h2>Delete Item by Name</h2>
+      <form id="delete-item-form">
+        <input type="text" id="delete-name" placeholder="Item Name" required />
+        <button type="submit">Delete Item</button>
+      </form>
+      <!-- Error / Success Message -->
+      <div id="delete-message"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

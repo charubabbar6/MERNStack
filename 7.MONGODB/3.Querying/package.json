@@ -1,0 +1,21 @@
+{
+  "name": "3.querying",
+  "version": "1.0.0",
+  "description": "Mongodb querying",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "mongo",
+    "querying",
+    "express"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.20.0",
+    "mongodb": "^6.8.1"
+  }
+}

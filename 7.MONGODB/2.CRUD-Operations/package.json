@@ -1,0 +1,20 @@
+{
+  "name": "2.crud-operations",
+  "version": "1.0.0",
+  "description": "CRUD operation using MongoDB",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "mongodb",
+    "express",
+    "crud"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.20.0",
+    "mongodb": "^6.8.1"
+  }
+}

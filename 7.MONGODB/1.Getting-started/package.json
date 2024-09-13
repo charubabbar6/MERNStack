@@ -1,0 +1,20 @@
+{
+  "name": "1.getting-started",
+  "version": "1.0.0",
+  "description": "Mongo db startup",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "mongodb",
+    "node"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.20.0",
+    "mongodb": "^6.8.1"
+  }
+}
