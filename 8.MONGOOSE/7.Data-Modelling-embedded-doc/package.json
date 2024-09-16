@@ -1,0 +1,21 @@
+{
+  "name": "7.data-modelling-embedded-doc",
+  "version": "1.0.0",
+  "description": "Data modelling embedded document in mongoose express.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "mongoose",
+    "datamodeling"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "mongoose": "^8.6.2"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "8.data-modelling-arrays-embedded",
+  "version": "1.0.0",
+  "description": "Data modeling Arrays of sub embedded documents",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "datamodeling",
+    "mongoose"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "mongoose": "^8.6.2"
+  }
+}

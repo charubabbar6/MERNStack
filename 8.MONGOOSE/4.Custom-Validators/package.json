@@ -1,0 +1,21 @@
+{
+  "name": "4.custom-validators",
+  "version": "1.0.0",
+  "description": "custom validation in mongoose",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "mongoose",
+    "custom",
+    "validation"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "mongoose": "^8.6.2"
+  }
+}

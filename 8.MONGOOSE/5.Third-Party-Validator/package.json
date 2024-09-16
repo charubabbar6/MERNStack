@@ -1,0 +1,22 @@
+{
+  "name": "5.third-party-validator",
+  "version": "1.0.0",
+  "description": "third party validator in mongoose express app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "mongoose",
+    "validation"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "mongoose": "^8.6.2",
+    "validator": "^13.12.0"
+  }
+}
