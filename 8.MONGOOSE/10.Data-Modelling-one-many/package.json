@@ -1,0 +1,21 @@
+{
+  "name": "10.data-modelling-one-many",
+  "version": "1.0.0",
+  "description": "Data Modelling one to many relationship",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "mongoose",
+    "onetomany"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0",
+    "mongoose": "^8.6.2"
+  }
+}
