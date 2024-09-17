@@ -1,0 +1,20 @@
+{
+  "name": "11.cookies-auth-with-client",
+  "version": "1.0.0",
+  "description": "Cookie authentication with client",
+  "main": "server.js",
+  "scripts": {
+    "server": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "cookie"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0"
+  }
+}

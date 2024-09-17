@@ -1,0 +1,21 @@
+{
+  "name": "12.cookies-auth-with-api",
+  "version": "1.0.0",
+  "description": "cookie authorization with API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "cookie"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.10",
+    "express": "^4.21.0"
+  }
+}
