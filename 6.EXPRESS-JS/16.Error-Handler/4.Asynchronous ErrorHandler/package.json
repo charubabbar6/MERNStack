@@ -1,0 +1,20 @@
+{
+  "name": "4.asynchronous-errorhandler",
+  "version": "1.0.0",
+  "description": "Asynchronous errorhandling in express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "asynchronous"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.7",
+    "express": "^4.21.0"
+  }
+}

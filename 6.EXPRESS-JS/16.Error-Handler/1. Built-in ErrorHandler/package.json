@@ -1,0 +1,19 @@
+{
+  "name": "1.-built-in-errorhandler",
+  "version": "1.0.0",
+  "description": "Built in Error Handler",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "error"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}

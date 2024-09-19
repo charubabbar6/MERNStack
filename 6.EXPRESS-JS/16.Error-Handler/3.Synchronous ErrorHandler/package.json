@@ -1,0 +1,21 @@
+{
+  "name": "3.synchronous-errorhandler",
+  "version": "1.0.0",
+  "description": "synchronous error handling in express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "express",
+    "synchronous",
+    "error",
+    "handling"
+  ],
+  "author": "charu babbar",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.0"
+  }
+}
