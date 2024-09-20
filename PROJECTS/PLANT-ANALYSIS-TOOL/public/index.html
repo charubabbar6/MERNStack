@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ImageScan: Advanced Image Analysis Tool</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>
+        <i class="fas fa-leaf"></i> ImageScan: Advanced Image Analysis Tool
+      </h1>
+      <p class="description">
+        Upload an image of a plant/any image to receive a detailed analysis of
+        its species, health, and care recommendations.
+      </p>
+
+      <h2>How to Use</h2>
+      <div class="cards">
+        <div class="card">
+          <i class="fas fa-upload card-icon"></i>
+          <h3>Upload</h3>
+          <p>Select or drag & drop a any image</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-search card-icon"></i>
+          <h3>Analyze</h3>
+          <p>Click 'Analyze Image' to process the image</p>
+        </div>
+        <div class="card">
+          <i class="fas fa-file-pdf card-icon"></i>
+          <h3>Download</h3>
+          <p>Get your detailed PDF report</p>
+        </div>
+      </div>
+
+      <form id="uploadForm" enctype="multipart/form-data">
+        <div class="upload-area" id="dropArea">
+          <i class="fas fa-cloud-upload-alt upload-icon"></i>
+          <p class="upload-text">Drag & Drop or Click to Upload Your Image</p>
+          <input
+            type="file"
+            name="image"
+            accept="image/*"
+            required
+            id="imageInput"
+          />
+          <img id="imagePreview" alt="Image preview" />
+        </div>
+        <!-- New Text Area for Custom Prompt -->
+        <div>
+          <label for="customPrompt">Enter Custom Analysis Prompt:</label>
+          <textarea
+            id="customPrompt"
+            name="customPrompt"
+            rows="4"
+            placeholder="Enter your analysis prompt here..."
+          ></textarea>
+        </div>
+
+        <button type="submit">
+          <i class="fas fa-search"></i> Analyze Image
+        </button>
+      </form>
+
+      <div id="loading" style="display: none">
+        <i class="fas fa-spinner fa-spin"></i> Analyzing image...
+      </div>
+      <div id="result"></div>
+      <button id="downloadButton" style="display: none">
+        <i class="fas fa-file-pdf"></i> Download PDF Report
+      </button>
+
+      <h2>Features</h2>
+      <div class="features">
+        <div class="feature">
+          <i class="fas fa-seedling feature-icon"></i>
+          <span>Accurate plant species identification</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-heartbeat feature-icon"></i>
+          <span>Detailed plant health assessment</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-list-ul feature-icon"></i>
+          <span>Customized care recommendations</span>
+        </div>
+        <div class="feature">
+          <i class="fas fa-history feature-icon"></i>
+          <span>Fast processing and instant results</span>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
