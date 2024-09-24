@@ -1,0 +1,34 @@
+<%- include('partials/header', { title: post.title, user: user }) %>
+<div class="container-fluid mt-5">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h1 class="card-title"><%= post.title %></h1>
+          <p class="card-text text-muted">
+            by <%= post.author.username %> on <%= post.createdAt.toDateString()
+            %>
+          </p>
+          <p class="card-text"><%= post.content %></p>
+          <% if (user && user._id.toString() === post.author._id.toString()) {
+          %>
+          <!-- Only show to the author -->
+          <a href="/posts/<%= post._id %>/edit" class="btn btn-primary">
+            <i class="fas fa-edit"></i> Edit Post
+          </a>
+          <form
+            action="/posts/<%= post._id %>?_method=DELETE"
+            method="POST"
+            class="d-inline"
+          >
+            <button type="submit" class="btn btn-danger">
+              <i class="fas fa-trash-alt"></i> Delete Post
+            </button>
+          </form>
+          <% } %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include('partials/footer') %>
+</div>
