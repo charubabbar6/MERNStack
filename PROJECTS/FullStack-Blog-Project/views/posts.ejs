@@ -1,9 +1,22 @@
 <%- include('partials/header', { title, user: user }) %>
+
 <h1 class="text-center my-4">All Posts [ <%= posts.length %> ]</h1>
+<% if (error) { %>
+<div class="alert alert-danger" role="alert"><%= error %></div>
+<% } %> <% if (success) { %>
+<div class="alert alert-success" role="alert"><%= success %></div>
+<% } %>
 <div class="row vh-100">
   <% if (posts.length > 0) { %> <% posts.forEach(post => { %>
   <div class="col-md-4 mb-4">
     <div class="card">
+      <% if (post.images && post.images.length > 0) { %>
+      <img
+        src="<%= post.images[0].url %>"
+        class="card-img-top"
+        alt="Post Image"
+      />
+      <% } %>
       <div class="card-body">
         <h5 class="card-title"><%= post.title %></h5>
         <p class="card-text">
@@ -15,6 +28,25 @@
   </div>
   <% }) %> <% } else { %>
   <p class="text-center w-100">No posts available.</p>
+  <% } %>
+</div>
+<!-- Pagination -->
+<div class="pagination justify-content-center">
+  <% if (currentPage > 1) { %>
+  <a href="?page=<%= currentPage - 1 %>" class="btn btn-outline-primary"
+    >Previous</a
+  >
+  <% } %> <% for (let i = 1; i <= totalPages; i++) { %>
+  <a
+    href="?page=<%= i %>"
+    class="btn <%= i === currentPage ? 'btn-primary' : 'btn-outline-primary' %>"
+  >
+    <%= i %>
+  </a>
+  <% } %> <% if (currentPage < totalPages) { %>
+  <a href="?page=<%= currentPage + 1 %>" class="btn btn-outline-primary"
+    >Next</a
+  >
   <% } %>
 </div>
 <%- include('partials/footer') %>

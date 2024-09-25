@@ -10,12 +10,22 @@
             %>
           </p>
           <p class="card-text"><%= post.content %></p>
+          <h2 class="mt-4">Images</h2>
+          <div class="row">
+            <% post.images.forEach(image => { %>
+            <div class="col-md-6 mb-3">
+              <img src="<%= image.url %>" alt="Post Image" class="img-fluid" />
+            </div>
+            <% }) %>
+          </div>
+
           <% if (user && user._id.toString() === post.author._id.toString()) {
           %>
           <!-- Only show to the author -->
           <a href="/posts/<%= post._id %>/edit" class="btn btn-primary">
             <i class="fas fa-edit"></i> Edit Post
           </a>
+
           <form
             action="/posts/<%= post._id %>?_method=DELETE"
             method="POST"
@@ -28,7 +38,107 @@
           <% } %>
         </div>
       </div>
+      <!-- Comments -->
+      <div class="card mb-4">
+        <div class="card-body">
+          <h2 class="card-title">Comments</h2>
+          <% if (post.comments.length > 0) { %>
+          <ul class="list-group list-group-flush" id="comment-list">
+            <% post.comments.forEach(comment => { %>
+            <li
+              class="list-group-item d-flex justify-content-between align-items-center"
+            >
+              <div>
+                <strong><%= comment.author.username %></strong>: <%=
+                comment.content %>
+              </div>
+              <% if (user && user._id.toString() ===
+              comment.author._id.toString()) { %>
+              <!-- Only show to the author -->
+              <div class="btn-group">
+                <a
+                  href="/comments/<%= comment._id %>/edit"
+                  class="btn btn-sm btn-secondary"
+                >
+                  <i class="fas fa-edit"></i> Edit
+                </a>
+                <form
+                  action="/comments/<%= comment._id %>?_method=DELETE"
+                  method="POST"
+                  class="d-inline"
+                >
+                  <button type="submit" class="btn btn-sm btn-danger">
+                    <i class="fas fa-trash-alt"></i> Delete
+                  </button>
+                </form>
+              </div>
+              <% } %>
+            </li>
+            <% }) %>
+          </ul>
+          <% } else { %>
+          <p>No comments yet.</p>
+          <% } %>
+          <!-- See More Comments Button -->
+          <% if (totalComments > post.comments.length) { %>
+          <div class="text-center mt-3">
+            <button id="see-more-comments" class="btn btn-secondary">
+              See More Comments
+            </button>
+          </div>
+          <% } %> <% if (user) { %>
+          <form
+            action="/posts/<%= post._id %>/comments"
+            method="POST"
+            class="mt-3"
+          >
+            <div class="form-group">
+              <textarea
+                name="content"
+                rows="4"
+                class="form-control"
+                placeholder="Add a comment..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Comment</button>
+          </form>
+          <% } else { %>
+          <p><a href="/auth/login">Login</a> to add a comment.</p>
+          <% } %>
+        </div>
+      </div>
+      <%- include('partials/footer') %>
     </div>
   </div>
-  <%- include('partials/footer') %>
 </div>
+<script>
+  let skip = "<%=post.comments.length; %>"; // Starting point after already loaded comments
+  let limit = "<%=limit%>"; // Limit for how many comments to load per request
+  let totalComments = "<%=totalComments%>"; // Total number of comments
+  let postId = "<%= post._id %>";
+
+  document
+    .getElementById("see-more-comments")
+    .addEventListener("click", function () {
+      fetch(`/posts/${postId}?limit=${limit}&skip=${skip}`)
+        .then((response) => response.text())
+        .then((data) => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(data, "text/html");
+          const newComments = htmlDoc.querySelectorAll("#comment-list li");
+          newComments.forEach((comment) => {
+            document.getElementById("comment-list").appendChild(comment);
+          });
+
+          // Update skip value
+          skip += limit;
+
+          // Hide the "See More" button if all comments are loaded
+          if (skip >= totalComments) {
+            document.getElementById("see-more-comments").style.display = "none";
+          }
+        })
+        .catch((error) => console.error("Error loading more comments:", error));
+    });
+</script>

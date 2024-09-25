@@ -1,0 +1,17 @@
+<% if (success.length > 0) { %>
+<div class="alert alert-success"><%= success[0] %></div>
+<% } %> <% if (error.length > 0) { %>
+<div class="alert alert-danger"><%= error[0] %></div>
+<% } %>
+
+<ul class="list-group">
+  <% posts.forEach(post => { %>
+  <li class="list-group-item">
+    <h5><%= post.title %></h5>
+    <p><%= post.content %></p>
+    <form action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+      <button type="submit" class="btn btn-danger">Delete</button>
+    </form>
+  </li>
+  <% }) %>
+</ul>

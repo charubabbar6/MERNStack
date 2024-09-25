@@ -4,6 +4,11 @@
 //npm i express-session
 //npm i connect-mongo
 //npm i passport
+//npm i multer
+// npm i multer-storage-cloudinary
+//npm i express-async-handler
+//npm i method-override
+//npm i connect-flash
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
@@ -13,8 +18,13 @@ const path = require("path");
 const passport = require("passport");
 const session = require("express-session");
 const MongoStore = require("connect-mongo");
+const methodOverride = require("method-override");
+const flash = require("connect-flash");
 const authRoutes = require("./route/authRoutes");
 const postRoutes = require("./route/postRoutes");
+const userRoutes = require("./route/userRoutes");
+const commentRoutes = require("./route/commentRoutes");
+const errorHandler = require("./middleware/errorHandler");
 const passportConfig = require("./config/passport");
 const PORT = process.env.PORT || 3000;
 const app = express();
@@ -32,6 +42,20 @@ app.use(
   })
 );
 
+// Flash middleware
+app.use(flash());
+
+// Middleware to expose flash messages to views
+
+app.use((req, res, next) => {
+  res.locals.success = req.flash("success");
+  res.locals.error = req.flash("error");
+  next();
+});
+
+// Method override middleware
+app.use(methodOverride("_method"));
+
 //passport
 passportConfig(passport);
 app.use(passport.initialize());
@@ -45,9 +69,15 @@ app.get("/", (req, res) => {
     title: "Home",
   });
 });
+
 //routes
 app.use("/auth", authRoutes);
 app.use("/posts", postRoutes);
+app.use("/", commentRoutes);
+app.use("/user", userRoutes);
+
+//error handler
+app.use(errorHandler);
 //connect to mongoDB
 mongoose
   .connect(process.env.MONGO_URL)

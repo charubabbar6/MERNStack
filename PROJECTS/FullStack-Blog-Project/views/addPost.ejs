@@ -16,7 +16,7 @@
         <div class="alert alert-success" role="alert"><%= success %></div>
         <% } %>
         <!-- <form action="/posts/add" method="POST" enctype="multipart/form-data" onsubmit="return validationForm()"> -->
-          <form action="/posts/add" method="POST" onsubmit="return validationForm()">
+          <form action="/posts/add" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
               <input type="text" class="form-control" name="title" id="title" />
@@ -30,7 +30,7 @@
                 rows="5"
               ></textarea>
             </div>
-            <!-- <div class="mb-3">
+            <div class="mb-3">
               <label for="images" class="form-label">Images</label>
               <input
                 class="form-control"
@@ -41,7 +41,7 @@
                 onchange="previewImages()"
               />
               <div class="mt-3" id="image-preview"></div>
-            </div> -->
+            </div>
             <button type="submit" class="btn btn-primary">
               <i class="fas fa-plus-circle"></i> Add Post
             </button>
